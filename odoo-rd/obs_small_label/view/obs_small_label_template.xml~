@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="obs_small_label_template">
+            <span t-as="f" t-foreach="get_barcode_data(data)">
+                <t t-foreach="doc_ids" t-as="doc_id">
+                    <div class="page">
+                        <t t-if="f['display_price']">
+                            <div align="center" style="color:black;margin-top:10px;">
+                                <span t-esc="f['list_price']" style="font-size:20px;"/>
+                            </div>
+                        </t>
+                        <div style="margin-top:8px;margin-left:10px;">
+                            <div style="color:black;font-size:17px;font-weight: bold;">
+                                <span t-esc="f['default_code']"/>
+                            </div>
+                         </div>
+                         <div style="margin-top:8px;margin-left:10px;margin-bottom:10px;">
+                            <div style="color:black;font-size:19px;font-weight: bold;">
+                                <span t-esc="f['name']"/>
+                            </div>
+                        </div>
+                        <div align="center" style="margin-top:20px;">
+                            <span t-raw="f['ean13']" />
+                        </div>
+                    </div>
+                </t>
+            </span>
+        </template>
+    </data>
+
+    <data>
+        <template id="obs_small_label_template_impresora_pequena">
+            <span t-as="f" t-foreach="get_barcode_data(data)">
+                <t t-foreach="doc_ids" t-as="doc_id">
+                    <div class="page">
+                        <t t-if="f['display_price']">
+                            <div align="center" style="color:black;margin-top:10px;">
+                                <span t-esc="f['list_price']" style="font-size:20px;"/>
+                            </div>
+                        </t>
+                        <div style="margin-top:8px;margin-left:10px;">
+                            <div style="color:black;font-size:17px;font-weight: bold;">
+                                <span t-esc="f['default_code']"/>
+                            </div>
+                         </div>
+                         <div style="margin-top:8px;margin-left:10px;margin-bottom:10px;">
+                            <div style="color:black;font-size:19px;font-weight: bold;">
+                                <span t-esc="f['name']"/>
+                            </div>
+                        </div>
+                        <div align="center" style="margin-top:20px;">
+                            <span t-raw="f['ean13']" />
+                        </div>
+                    </div>
+                </t>
+            </span>
+        </template>
+    </data>
+</openerp>

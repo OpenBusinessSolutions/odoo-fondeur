@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- res.partner.address_archive -->
+        <record id="view_partner_address_archive_tree" model="ir.ui.view">
+            <field name="name">res.partner.address_archive.tree</field>
+            <field name="model">res.partner.address_archive</field>
+            <field name="arch" type="xml">
+                <tree string="Addresses">
+                    <field name="name"/>
+                    <field name="street"/>
+                    <field name="city"/>
+                    <field name="country_id"/>
+                    <field name="current"/>
+                    <field name="create_date"/>
+                </tree>
+            </field>
+        </record>  
+
+        <record id="view_partner_address_archive_form" model="ir.ui.view">
+            <field name="name">res.partner.address_archive.form</field>
+            <field name="model">res.partner.address_archive</field>
+            <field name="arch" type="xml">
+                <form string="Addresses">
+                    <separator string="Address"/>
+                    <group>
+                        <group>
+                            <field name="street"/>
+                            <field name="street2"/>
+                            <field name="house_name"/>   
+                            <field name="house_no"/>
+                            <field name="apartment_no"/>
+                            <field name="eyre"/>                         
+                        </group>
+                        <group>
+                            <field name="apartment_complex"/>
+                            <field name="city"/>
+                            <field name="name"/>                            
+                            <field name="state_id"/>
+                            <field name="country_id"/>  
+                            <field name="address_description"/>
+                        </group>
+                        <group string="Status">
+                            <field name="current"/>
+                            <field name="create_date" readonly="1"/> 
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>  
+
+        <record id="action_partner_address_archive_form" model="ir.actions.act_window">
+            <field name="name">Addresses</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner.address_archive</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>      
+
+        <record id="action_partner_address_archive_form_view" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_partner_address_archive_form"/>
+            <field name="act_window_id" ref="action_partner_address_archive_form"/>
+        </record>    
+
+        <!-- res.partner --> 
+
+        <record id="view_partner_form_inherit" model="ir.ui.view">
+            <field name="name">Partner Form - Inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="street2" position="after">
+                    <div class="oe_inline">
+                        <field name="eyre" style="width: 35%%"
+                            placeholder="Eyre"
+                        />
+                        <field name="apartment_complex" style="width: 35%%"
+                            placeholder="Apt. Complx."
+                        />
+                        <field name="house_name" style="width: 30%%"
+                            placeholder="HS Name"
+                        />
+                    </div>
+                </field>
+                <field name="street2" position="attributes">
+                    <attribute name="placeholder">Entry Street</attribute>
+                </field>
+                <field name="zip" position="attributes">
+                    <attribute name="placeholder">Post Code</attribute>
+                </field>                
+                <field name="country_id" position="after">
+                    <field name="address_description"
+                        placeholder="Address Description"
+                    />
+                </field>
+                <field name="title" position="after">
+                    <field name="nationality_id" 
+                        attrs="{'invisible': [('is_company', '=', True)]}"
+                    />
+                    <label for="attention"/>
+                    <span style="color:red">
+                        <field name="attention"/>
+                    </span>
+                </field>                
+                <page string="Internal Notes" position="before">
+                    <page String="Addresses Archive">
+                        <button name="init_archive" string="Init Archive" 
+                            type="object" class="oe_highlight"
+                        />
+                        <button name="update_address" string="Update Address" 
+                            type="object" class="oe_highlight"
+                        />                        
+                        <field name="address_archive_ids"/>
+                    </page>
+                </page>
+                <xpath expr="//form[@string='Contact']/sheet/group[1]/field[@name='mobile']" position="after">
+                    <field name="nationality_id" style="width: 30%%"/>
+                </xpath>                                              
+            </field>
+        </record>          
+    </data>
+</openerp>        

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="reassign_product_form_view">
+            <field name="name">reassign.product.form</field>
+            <field name="model">reassign.products</field>
+            <field name="arch" type="xml">
+                <form string="Reassign Products">
+                    <field name="products">
+                        <tree string="Reassign product lines" editable="top" delete="0" create="0">
+                            <field name="values" widget="many2many_tags" readonly="1"/>
+                            <field name="product"/>
+                        </tree>
+                    </field>
+                    <footer>
+                        <button name="reassign"
+                                type="object"
+                                string="Confirm"
+                                class="oe_highlight" />
+                        or
+                        <button string="Cancel"
+                                class="oe_link"
+                                special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window name="Reassign products"
+                    res_model="reassign.products"
+                    src_model="product.template"
+                    view_mode="form"
+                    target="new"
+                    id="reassign_products_action" />
+
+    </data>
+</openerp>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="qc_test_form_view_tolerance">
+            <field name="name">qc.test.form.tolerance</field>
+            <field name="model">qc.test</field>
+            <field name="inherit_id" ref="quality_control.qc_test_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='test_lines']//field[@name='min_value']" position="before" >
+                    <field name="min_value_below" />
+                </xpath>
+                <xpath expr="//field[@name='test_lines']//field[@name='max_value']" position="after" >
+                    <field name="max_value_above" />
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="qc_test_question_form_view_tolerance">
+            <field name="name">qc.test.question.form.tolerance</field>
+            <field name="model">qc.test.question</field>
+            <field name="inherit_id" ref="quality_control.qc_test_question_form_view" />
+            <field name="arch" type="xml">
+                <h1 name="quantitative-data" position="before">
+                    <label for="same_tolerance" />
+                    <field name="same_tolerance" />
+                    <br/>
+                </h1>
+                <div name="quantitative" position="after">
+                    <group attrs="{'invisible': [('type', '!=', 'quantitative')]}">
+                        <group>
+                            <field name="tolerance_percent_below"
+                                   attrs="{'required': [('type', '=', 'quantitative')]}" />
+                            <field name="tolerance_below"
+                                   attrs="{'required': [('type', '=', 'quantitative')]}" />
+                            <field name="min_value_below" readonly="1" />
+                        </group>
+                        <group>
+                            <field name="tolerance_percent_above"
+                                   attrs="{'readonly': [('same_tolerance', '=', True)], 'required': [('type', '=', 'quantitative')]}" />
+                            <field name="tolerance_above"
+                                   attrs="{'readonly': [('same_tolerance', '=', True)], 'required': [('type', '=', 'quantitative')]}"/>
+                            <field name="max_value_above" readonly="1" />
+                        </group>
+                    </group>
+                </div>
+                <xpath expr="//field[@name='ql_values']/tree//field[@name='ok']" position="after">
+                    <field name="tolerance_status"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

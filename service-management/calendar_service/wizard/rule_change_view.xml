@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data> 
+        <!-- recurrent.rule.change.time-->
+        <record id="view_recurrent_rule_change_time_form" model="ir.ui.view">
+            <field name="name">recurrent.rule.change.time.form</field>
+            <field name="model">recurrent.rule.change.time</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <form string="Rule Change Time">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="action"/>
+                                <field name="calendar_id"
+                                    widget="selection" 
+                                    attrs="{'invisible': [('action', '=', 'add')], 'required': [('action', 'in', ('update', 'delete'))]}"
+                                    domain="[('rule_id', '=', rule_id)]"/>                                
+                                <field name="weekday" 
+                                    attrs="{'invisible': [('action', '=', 'delete')], 'required': [('action', 'in', ('update', 'add'))]}"/>                                                                  
+                                <field name="weeks" 
+                                    attrs="{'invisible': [('action', '!=', 'add')], 'required': [('action', '=', 'add')]}"/>                                            
+                            </group>
+                            <group>
+                                <field name="time_from" widget="float_time" 
+                                    attrs="{'invisible': [('action', '=', 'delete')], 'required': [('action', 'in', ('update', 'add'))]}"/>
+                                <field name="time_to" widget="float_time" 
+                                    attrs="{'invisible': [('action', '=', 'delete')], 'required': [('action', 'in', ('update', 'add'))]}"/>
+                                <field name="product_id" attrs="{'invisible': [('action', '!=', 'add')]}"/>
+                                <field name="employee_ids" widget="many2many_tags"
+                                    attrs="{'invisible': [('action', 'in', ('delete', 'update'))], 'required': [('action', '=', 'add')]}"/>     
+
+                                <field name="rule_id" invisible="1"/>                                
+                            </group>
+                        </group>                              
+                    </sheet>
+                </form>
+            </field>
+        </record>        
+
+         <!--
+        recurrent.rule.change
+        -->
+        <record id="view_recurrent_rule_change_form" model="ir.ui.view">
+            <field name="name">recurrent.rule.change.form</field>
+            <field name="model">recurrent.rule.change</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <form string="Rule Change">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="rule_id" attrs="{'required': True}"/>
+                                <field name="change_type"/>
+                            </group>
+                            <group>
+                                <field name="date_from"/>
+                                <field name="date_to"/>
+                            </group>
+                        </group>
+                        <field name="change_time_ids" context="{'default_rule_id': rule_id}">
+                            <tree string="Change Times">
+                                <field name="action"/>
+                                <field name="calendar_id"/>                                
+                                <field name="weekday"/>                                
+                                <field name="time_from" widget="float_time" />
+                                <field name="time_to" widget="float_time"/>
+                            </tree>
+                        </field>
+                    </sheet>
+                    <footer>
+                        <button name="change_rule" string="Update Rule" class="oe_highlight" type="object"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="act_recurrent_rule_change" model="ir.actions.act_window">
+            <field name="name">Recurrent Rule Change</field>
+            <field name="res_model">recurrent.rule.change</field>
+            <!--<field name="src_model">calendar.service.recurrent</field>-->
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_recurrent_rule_change_form"/>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</openerp>

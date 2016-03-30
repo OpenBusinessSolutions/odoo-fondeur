@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>   
+        <record id="crm_case_form_view_leads_inherit" model="ir.ui.view">
+            <field name="name">CRM Lead Form - Inherit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+            <field name="arch" type="xml"> 
+                <field name="partner_id" position="attributes">
+                    <attribute name="context">{'default_name': contact_name, 'default_street': street, 'default_city': city, 'default_state_id': state_id, 'default_zip': zip, 'default_country_id':    country_id, 'default_function': function, 'default_phone': phone, 'default_mobile': mobile, 'default_fax': fax, 'default_email': email_from, 'default_user_id': user_id, 'default_section_id': section_id, 'default_house_no': house_no, 'default_apartment_no': apartment_no, 'default_eyre': eyre, 'default_apartment_complex': apartment_complex,
+                    'default_house_name': house_name, 'default_address_description': address_description}    
+                </attribute>
+                </field>                 
+                <field name="street2" position="after">
+                    <div class="oe_inline">
+                        <field name="eyre" style="width: 35%%"
+                            placeholder="Eyre"
+                        />
+                        <field name="apartment_complex" style="width: 35%%"
+                            placeholder="Apt. Complx."
+                        />
+                        <field name="house_name" style="width: 30%%"
+                            placeholder="HS Name"
+                        />
+                    </div>
+                </field>
+                <field name="zip" position="attributes">
+                    <attribute name="placeholder">Post Code</attribute>
+                </field>                
+                <field name="country_id" position="after">
+                    <field name="address_description"
+                        placeholder="Address Description"
+                    />
+                </field>   
+                <field name="function" position="before">
+                    <field name="nationality_id" 
+                    />
+                </field>                                            
+                <page string="Internal Notes" position="after">
+                    <page string="Service Time">
+                        <group>
+                            <group>
+                                <field name="product_id"/>                            
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="desired_time_ids">
+                                <tree string="Service Time" editable="bottom">
+                                    <field name="day"/>
+                                    <field name="time_from" widget="float_time"/>
+                                    <field name="time_to" widget="float_time"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record> 
+
+        <record id="crm_case_form_view_oppor_inherit" model="ir.ui.view">
+            <field name="name">CRM Opportunity Form - Inherit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+            <field name="arch" type="xml">
+                <field name="street2" position="after">
+                    <div class="oe_inline">
+                        <field name="eyre" style="width: 35%%"
+                            placeholder="Eyre"
+                        />
+                        <field name="apartment_complex" style="width: 35%%"
+                            placeholder="Apt. Complx."
+                        />
+                        <field name="house_name" style="width: 30%%"
+                            placeholder="HS Name"
+                        />
+                    </div>
+                </field>
+                <field name="zip" position="attributes">
+                    <attribute name="placeholder">Post Code</attribute>
+                </field>                
+                <field name="country_id" position="after">
+                    <field name="address_description"
+                        placeholder="Address Description"
+                    />
+                </field>   
+                <field name="function" position="before">
+                    <field name="nationality_id" 
+                    />
+                </field>                        
+                <page string="Internal Notes" position="after">
+                    <page string="Service Time">
+                        <group>
+                            <field name="product_id" style="width: 30%%"/>                            
+                        </group>
+                        <group>
+                            <field name="desired_time_ids">
+                                <tree string="Service Time" editable="bottom">
+                                    <field name="day"/>
+                                    <field name="time_from" widget="float_time"/>
+                                    <field name="time_to" widget="float_time"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>           
+
+    </data>
+</openerp>        

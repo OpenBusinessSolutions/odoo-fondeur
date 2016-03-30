@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="wizard_small_barcode_view" model="ir.ui.view">
+            <field name="name">Small Label</field>
+            <field name="model">obs.small.label.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Parameters">
+                    <group>
+                        <group>
+                            <field name="currency_id"/>
+                        </group>
+                        <group>
+                            <field name="cur_position"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="pricelist_id" domain="[('currency_id', '=', currency_id)]"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="display_price"/>
+                        </group>
+                        <group>
+                            <field name="barcode_from"/>
+                        </group>
+                    </group>
+                    <div>
+                        <field name="product_ids">
+                            <tree editable="bottom">
+                                <field name="product_id"/>
+                                <field name="qty"/>
+                            </tree>
+                        </field>
+                    </div>
+                    <footer>
+                        <button name="small_barcode_report_call" string="Print" type="object"  class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="action_small_barcode_label"
+            name="Small Barcode Label"
+            src_model="product.template"
+            res_model="obs.small.label.wizard"
+            view_type="form"
+            view_mode="form"
+            key2="client_action_multi"
+            target="new"
+            />
+
+        <record id="product_small_label_qty_form" model="ir.ui.view">
+            <field name="name">Product Small Label Qty</field>
+            <field name="model">product.small.label.qty</field>
+            <field name="arch" type="xml">
+                <form string="Product Small Label Qty">
+                    <group>
+                        <group>
+                            <field name="product_id"/>
+                        </group>
+                        <group>
+                            <field name="qty"/>
+                            <field name="prod_small_wiz_id" invisible="1"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="product_small_label_qty_tree" model="ir.ui.view">
+            <field name="name">Product Small Label Qty</field>
+            <field name="model">product.small.label.qty</field>
+            <field name="arch" type="xml">
+                <tree string="Product Small Label Qty">
+                    <field name="product_id"/>
+                    <field name="qty"/>
+                    <field name="prod_small_wiz_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="product_small_label_qty_action" model="ir.actions.act_window">
+            <field name="name">Product Small Label Qty</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.small.label.qty</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</openerp>

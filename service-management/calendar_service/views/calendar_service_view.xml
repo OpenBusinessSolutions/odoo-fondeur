@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>      
+         <!--
+        calendar.service.work
+        -->
+        <record id="view_calendar_service_work_tree" model="ir.ui.view">
+            <field name="name">calendar.service.work.tree</field>
+            <field name="model">calendar.service.work</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree string="Service Work">
+                    <field name="name"/>
+                    <field name="employee_id"/>
+                    <field name="address_archive_id"/>
+                    <field name="details"/>
+                    <field name="start_time"/>
+                    <field name="end_time"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_calendar_service_work_form" model="ir.ui.view">
+            <field name="name">calendar.service.work.form</field>
+            <field name="model">calendar.service.work</field>
+            <field name="priority">5</field>
+            <field name="arch" type="xml">
+                <form string="Service Work">
+                    <header>
+                        <button name="close_state" string="Done" type="object"
+                            help="Finish Service" class="oe_highlight"
+                            attrs="{'invisible': [('state', '!=', 'open')]}"
+                        /> 
+                        <button name="cancel_state" string="Cancel" type="object"
+                            help="Cancel Service" class="oe_highlight"
+                            attrs="{'invisible': [('state', '!=', 'open')]}"
+                        /> 
+                        <field name="state" widget="statusbar"/>                     
+                    </header>                    
+                    <sheet>                        
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name" 
+                                attrs="{'readonly': [('state', '!=', 'open')]}"
+                            /></h1>                            
+                        </div>
+                        <group>
+                            <group>
+                                <field name="start_time" attrs="{'readonly': [('state', '!=', 'open')]}"/>
+                                <field name="end_time" attrs="{'readonly': [('state', '!=', 'open')]}"/> 
+                                <field name="employee_id" attrs="{'readonly': [('state', '!=', 'open')]}"/>                                
+                                <field name="duration" invisible="1"/>                                                               
+                                <field name="work_type" attrs="{'readonly': True}"/>
+                            </group>
+                            <group>
+                                <field name="service_id"
+                                    context="{'default_partner_id': partner_id}"
+                                    onchange="onchange_service_id()"
+                                    attrs="{'readonly': True}"
+                                />
+                                <field name="partner_id"
+                                    onchange="onchange_partner_id()"
+                                    attrs="{'readonly': True}"
+                                />
+                                <field name="address_archive_id"
+                                    attrs="{'readonly': True}"
+                                />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Additional Info">
+                                <group>
+                                    <group>
+                                        <field name="description"
+                                            attrs="{'readonly': [('state', '!=', 'open')]}"
+                                        />
+                                        <label for="attention"
+                                            attrs="{'readonly': [('state', '!=', 'open')]}"
+                                        />
+                                        <span style="color: red"><field name="attention"
+                                            attrs="{'readonly': [('state', '!=', 'open')]}"
+                                        /></span>
+                                    </group>
+                                    <group>
+                                        <field name="note"
+                                            attrs="{'readonly': [('state', '!=', 'open')]}"
+                                        />
+                                    </group> 
+                                </group> 
+                            </page>
+                        </notebook>                      
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_calendar_service_work_calendar">
+            <field name="name">Service Works Calendar</field>
+            <field name="model">calendar.service.work</field>
+            <field name="priority" eval="1"/>
+            <field name="arch" type="xml">
+                <calendar string="Service Works" date_start="start_time" color="employee_id" 
+                    date_stop="end_time" mode="week" avatar_model="hr.employee" display="[employee_id], [partner_id]">                    
+                    <field name="employee_id"/>
+                    <field name="partner_id"/>                                                                                           
+                </calendar>                
+            </field>
+        </record>        
+        <record id="action_calendar_service_work" model="ir.actions.act_window">
+            <field name="name">Service Works</field>
+            <field name="res_model">calendar.service.work</field>
+            <field name="view_mode">calendar,tree,form</field>
+            <field name="view_id" ref="view_calendar_service_work_calendar"/>
+            <!--<field name="search_view_id" ref="view_calendar_event_search"/>-->
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create new service work.
+              </p>
+            </field>
+        </record>   
+
+        <menuitem name="Service Works" id="menu_calendar_service_work" parent="base.menu_sales" sequence="4" action="action_calendar_service_work"/>  
+
+         <!--
+        calendar.service
+        -->
+        <record id="view_calendar_service_tree" model="ir.ui.view">
+            <field name="name">calendar.service.tree</field>
+            <field name="model">calendar.service</field>
+            <field name="arch" type="xml">
+                <tree string="Service">
+                    <field name="name"/>
+                    <field name="user_id"/>
+                    <field name="partner_id"/>
+                    <field name="start_time"/>
+                    <field name="end_time"/>
+                    <field name="work_type"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_calendar_service_form" model="ir.ui.view">
+            <field name="name">calendar.service.form</field>
+            <field name="model">calendar.service</field>
+            <field name="arch" type="xml">
+                <form string="Service">
+                    <header>
+                        <button name="close_state" string="Done" type="object"
+                            help="Finish Service" class="oe_highlight"
+                            attrs="{'invisible': [('state', '!=', 'open')]}"
+                        /> 
+                        <button name="cancel_state" string="Cancel" type="object"
+                            help="Cancel Service" class="oe_highlight"
+                            attrs="{'invisible': [('state', '!=', 'open')]}"
+                        />
+                        <button name="open_state" string="Open" type="object"
+                            help="Open Service" class="oe_highlight"
+                            attrs="{'invisible': [('state', '=', 'open')]}"
+                        />                         
+                        <field name="state" widget="statusbar"/>                     
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name"/></h1>                            
+                        </div>                        
+                        <group>
+                            <group>
+                                <field name="start_time" attrs="{'readonly': [('state', '!=', 'open')]}"/>
+                                <field name="end_time" attrs="{'readonly': [('state', '!=', 'open')]}"/>
+                                <field name="user_id" attrs="{'readonly': [('state', '!=', 'open')]}"/>
+                            </group>
+                            <group>
+                                <field name="partner_id" attrs="{'required': True, 'readonly': [('state', '!=', 'open')]}"/>
+                                <field name="product_id" attrs="{'readonly': [('state', '!=', 'open')]}"/>
+                                <field name="order_id" attrs="{'readonly': True, 'invisible': [('order_id', '=', False)]}"/>
+                                <field name="work_type" attrs="{'readonly': [('state', '!=', 'open')]}"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Works"> 
+                                <group>                                                   
+                                    <field name="work_ids"
+                                        context="{'default_service_id': id}"
+                                        attrs="{'readonly': [('state', '!=', 'open')]}"
+                                    />
+                                </group>
+                            </page>
+                            <page string="Cancellation Management" attrs="{'invisible': [('state', '!=', 'cancel')]}">
+                                <group>
+                                    <field name="desired_time_ids">
+                                        <tree string="Cleaning Time" editable="bottom">
+                                            <field name="day"/>
+                                            <field name="time_from" widget="float_time"/>
+                                            <field name="time_to" widget="float_time"/>
+                                        </tree>
+                                    </field>
+                                    <field name="canceled_until"/>                                    
+                                </group>
+                            </page>                            
+                        </notebook>                    
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>                    
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_calendar_service_calendar">
+            <field name="name">Service Calendar</field>
+            <field name="model">calendar.service</field>
+            <field name="arch" type="xml">
+                <calendar string="Services" date_start="start_time" color="work_type"
+                    date_stop="end_time" mode="week">
+                    <field name="name"/>
+                    <field name="partner_id"/>                                                                                          
+                </calendar>                
+            </field>
+        </record>
+
+        <record id="view_calendar_service_search" model="ir.ui.view">
+            <field name="name">Calendar Service - Search</field>
+            <field name="model">calendar.service</field>
+            <field name="arch" type="xml">
+                <search string="Search Services">
+                    <field name="name" string="Service / Customer" filter_domain="['|',('partner_id','ilike',self),('name','ilike',self)]"/>
+                    <field name="partner_id" filter_domain="[('partner_id','child_of',self)]"/>
+                    <field name="state" filter_domain="[('state', '=', 'open')]"/>
+                    <separator/>
+                    <filter string="My Services"
+                            domain="[('user_id','=',uid)]"
+                            help="Services I'm responsible"/>
+                    <filter string="Unassigned" name="unassigned"
+                            domain="[('user_id','=', False)]"
+                            help="No salesperson"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Salesperson" domain="[]" context="{'group_by':'user_id'}"/>
+                        <filter string="Customer" domain="[]" context="{'group_by':'partner_id'}"/>
+                        <filter string="State" domain="[]" context="{'group_by':'state'}"/>
+                        <filter string="Customer" help="Partner" domain="[]" context="{'group_by':'partner_id'}"/>
+                        <filter string="Type"  domain="[]" context="{'group_by':'work_type'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>           
+           
+        <record id="action_calendar_service" model="ir.actions.act_window">
+            <field name="name">Services</field>
+            <field name="res_model">calendar.service</field>
+            <field name="view_mode">tree,calendar,form</field>
+            <field name="view_id" ref="view_calendar_service_tree"/>
+            <field name="search_view_id" ref="view_calendar_service_search"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to create new service.
+              </p>
+            </field>
+        </record>   
+
+        <menuitem name="Services" id="menu_calendar_service" parent="base.menu_sales" sequence="4" action="action_calendar_service"/>                                              
+    </data>
+</openerp>

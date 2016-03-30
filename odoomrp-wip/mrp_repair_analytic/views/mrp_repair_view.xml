@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_repair_order_tree_inh_repairwithanalityc" model="ir.ui.view">
+            <field name="name">view.repair.order.tree.inh.repairwithanalityc</field>
+            <field name="model">mrp.repair</field>
+            <field name="inherit_id" ref="mrp_repair.view_repair_order_tree"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="analytic_account" />
+                </field>
+            </field>
+        </record>
+        <record id="view_repair_order_form_inh_repairwithanalityc" model="ir.ui.view">
+            <field name="name">view.repair.order.form.inh.repairwithanalityc</field>
+            <field name="model">mrp.repair</field>
+            <field name="inherit_id" ref="mrp_repair.view_repair_order_form"/>
+            <field name="arch" type="xml">
+                <button name="cancel" position="after">
+                    <button name="create_repair_cost" type="object" states="confirmed,2binvoiced,ready,under_repair,invoice_except" string="Reload costs" class="oe_highlight"/>
+                </button>
+                <field name="partner_id" position="after">
+                    <field name="analytic_account" />
+                </field>
+                <xpath expr="//field[@name='fees_lines']/form//field[@name='to_invoice']" position="before">
+                    <field name="load_cost" groups="mrp_repair_analytic.group_mrp_repair_cost_check"/>
+                    <field name="user_id"/>
+                </xpath>
+                <xpath expr="//field[@name='fees_lines']/tree//field[@name='product_id']" position="before">
+                    <field name="load_cost" groups="mrp_repair_analytic.group_mrp_repair_cost_check"/>
+                    <field name="user_id"/>
+                </xpath>
+                <xpath expr="//field[@name='operations']/form//field[@name='name']" position="before">
+                    <field name="load_cost" groups="mrp_repair_analytic.group_mrp_repair_cost_check"/>
+                    <field name="user_id"/>
+                </xpath>
+                <xpath expr="//field[@name='operations']/tree//field[@name='type']" position="before">
+                    <field name="load_cost" groups="mrp_repair_analytic.group_mrp_repair_cost_check"/>
+                    <field name="user_id"/>
+                </xpath>
+                <xpath expr="//field[@name='operations']/tree//field[@name='price_unit']" position="before">
+                    <field name="standard_price"/>
+                    <field name="cost_subtotal" sum="Operations cost subtotal"/>
+                </xpath>
+                <xpath expr="//field[@name='operations']/form//field[@name='price_unit']" position="before">
+                    <field name="standard_price"/>
+                    <field name="cost_subtotal"/>
+                </xpath>
+                <xpath expr="//field[@name='fees_lines']/tree//field[@name='price_unit']" position="before">
+                    <field name="standard_price"/>
+                    <field name="cost_subtotal" sum="Fees cost subtotal"/>
+                </xpath>
+                <xpath expr="//field[@name='fees_lines']/form//field[@name='price_unit']" position="before">
+                    <field name="standard_price"/>
+                    <field name="cost_subtotal"/>
+                </xpath>
+                <xpath expr="//field[@name='operations']/tree//field[@name='price_subtotal']" position="attributes">
+                    <attribute name="sum">Operations price subtotal</attribute>
+                </xpath>
+                <xpath expr="//field[@name='fees_lines']/tree//field[@name='price_subtotal']" position="attributes">
+                    <attribute name="sum">Fees price subtotal</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

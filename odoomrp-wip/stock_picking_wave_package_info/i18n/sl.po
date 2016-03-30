@@ -1,0 +1,175 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * stock_picking_wave_package_info
+# 
+# Translators:
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2015
+msgid ""
+msgstr ""
+"Project-Id-Version: odoomrp-wip (8.0)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-07 10:45+0000\n"
+"PO-Revision-Date: 2015-09-20 19:06+0000\n"
+"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>\n"
+"Language-Team: Slovenian (http://www.transifex.com/oca/odoomrp-wip-8-0/language/sl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: sl\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+
+#. module: stock_picking_wave_package_info
+#: view:website:stock_picking_wave_package_info.label_creator_palet_wave_report_document
+msgid "Address:"
+msgstr "Naslov:"
+
+#. module: stock_picking_wave_package_info
+#: view:website:stock_picking_wave_package_info.label_creator_palet_wave_report_document
+msgid "Client:"
+msgstr "Stranka:"
+
+#. module: stock_picking_wave_package_info
+#: view:website:stock_picking_wave_package_info.label_creator_palet_wave_report_document
+msgid "Gross Weight:"
+msgstr "Bruto masa:"
+
+#. module: stock_picking_wave_package_info
+#: view:website:stock_picking_wave_package_info.label_creator_palet_wave_report_document
+msgid "NET Weight:"
+msgstr "Neto masa:"
+
+#. module: stock_picking_wave_package_info
+#: view:website:stock_picking_wave_package_info.label_creator_palet_wave_report_document
+msgid "Number of lots:"
+msgstr "Število lotov:"
+
+#. module: stock_picking_wave_package_info
+#: view:stock.picking.wave:stock_picking_wave_package_info.stock_picking_wave_package_info_form_view
+msgid "Operations"
+msgstr "Operacije"
+
+#. module: stock_picking_wave_package_info
+#: view:website:stock_picking_wave_package_info.label_creator_palet_wave_report_document
+msgid "Package number:"
+msgstr "Številka pakiranja:"
+
+#. module: stock_picking_wave_package_info
+#: view:website:stock_picking_wave_package_info.label_creator_palet_wave_report_document
+msgid "Package:"
+msgstr "Pakiranje:"
+
+#. module: stock_picking_wave_package_info
+#: view:stock.picking.wave:stock_picking_wave_package_info.stock_picking_wave_package_info_form_view
+msgid "Packages"
+msgstr "Pakiranja"
+
+#. module: stock_picking_wave_package_info
+#: model:ir.model,name:stock_picking_wave_package_info.model_stock_quant_package
+msgid "Physical Packages"
+msgstr "Fizična pakiranja"
+
+#. module: stock_picking_wave_package_info
+#: model:ir.model,name:stock_picking_wave_package_info.model_stock_picking_wave
+msgid "Picking Wave"
+msgstr "Zbirni val"
+
+#. module: stock_picking_wave_package_info
+#: view:stock.quant.package:stock_picking_wave_package_info.stock_quant_package_wave_info_form_view
+msgid "Picking Waves"
+msgstr "Zbirni vali"
+
+#. module: stock_picking_wave_package_info
+#: model:ir.actions.report.xml,name:stock_picking_wave_package_info.label_creator_wave_palet_report
+msgid "Picking wave palet label"
+msgstr "Etiketa palete zbirnega vala"
+
+#. module: stock_picking_wave_package_info
+#: model:ir.model,name:stock_picking_wave_package_info.model_stock_transfer_details
+msgid "Picking wizard"
+msgstr "Čarovnik za zbirnike"
+
+#. module: stock_picking_wave_package_info
+#: view:website:stock_picking_wave_package_info.label_creator_palet_wave_report_document
+msgid "Picking:"
+msgstr "Zbirnik:"
+
+#. module: stock_picking_wave_package_info
+#: view:stock.quant.package:stock_picking_wave_package_info.stock_quant_package_wave_info_form_view
+msgid "Pickings"
+msgstr "Zbirniki:"
+
+#. module: stock_picking_wave_package_info
+#: model:ir.model,name:stock_picking_wave_package_info.model_stock_picking_package_total
+msgid "Stock Picking Package Total"
+msgstr "Zbirnik zaloge pakiranja skupaj"
+
+#. module: stock_picking_wave_package_info
+#: model:ir.model,name:stock_picking_wave_package_info.model_stock_picking_package_weight_lot
+msgid "Stock Picking Package Weight Total"
+msgstr "Skupna masa pakiranja zbirnika zaloge"
+
+#. module: stock_picking_wave_package_info
+#: view:stock.picking.wave:stock_picking_wave_package_info.stock_picking_wave_package_info_form_view
+msgid "Total Kg. and Lots by package"
+msgstr "Skupaj kg in lotov po pakiranju"
+
+#. module: stock_picking_wave_package_info
+#: view:stock.picking.wave:stock_picking_wave_package_info.stock_picking_wave_package_info_form_view
+msgid "Total packages by logistic unit"
+msgstr "Skupaj pakiranj po logistični enoti"
+
+#. module: stock_picking_wave_package_info
+#: view:website:stock_picking_wave_package_info.label_creator_palet_wave_report_document
+msgid "Type:"
+msgstr "Tip:"
+
+#. module: stock_picking_wave_package_info
+#: field:stock.picking.package.total,wave:0
+#: field:stock.picking.package.weight.lot,wave:0
+msgid "Wave"
+msgstr "Val"
+
+#. module: stock_picking_wave_package_info
+#: view:website:stock_picking_wave_package_info.label_creator_palet_wave_report_document
+msgid "of"
+msgstr "od"
+
+#. module: stock_picking_wave_package_info
+#: view:stock.picking.wave:stock_picking_wave_package_info.stock_picking_wave_package_info_form_view
+msgid "sum_empty_weight"
+msgstr "sum_empty_weight"
+
+#. module: stock_picking_wave_package_info
+#: view:stock.picking.wave:stock_picking_wave_package_info.stock_picking_wave_package_info_form_view
+msgid "sum_gross_weight"
+msgstr "sum_gross_weight"
+
+#. module: stock_picking_wave_package_info
+#: view:stock.picking.wave:stock_picking_wave_package_info.stock_picking_wave_package_info_form_view
+msgid "sum_net_weight"
+msgstr "sum_net_weight"
+
+#. module: stock_picking_wave_package_info
+#: view:stock.picking.wave:stock_picking_wave_package_info.stock_picking_wave_package_info_form_view
+msgid "sum_quantity"
+msgstr "sum_quantity"
+
+#. module: stock_picking_wave_package_info
+#: view:stock.picking.wave:stock_picking_wave_package_info.stock_picking_wave_package_info_form_view
+msgid "sum_real_weight"
+msgstr "sum_real_weight"
+
+#. module: stock_picking_wave_package_info
+#: view:stock.picking.wave:stock_picking_wave_package_info.stock_picking_wave_package_info_form_view
+msgid "sum_total_estim_weight"
+msgstr "sum_total_estim_weight"
+
+#. module: stock_picking_wave_package_info
+#: view:stock.picking.wave:stock_picking_wave_package_info.stock_picking_wave_package_info_form_view
+msgid "sum_total_estim_weight_net"
+msgstr "sum_total_estim_weight_net"
+
+#. module: stock_picking_wave_package_info
+#: view:stock.picking.wave:stock_picking_wave_package_info.stock_picking_wave_package_info_form_view
+msgid "sum_tvolume_charge"
+msgstr "sum_tvolume_charge"

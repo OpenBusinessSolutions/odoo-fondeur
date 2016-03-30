@@ -1,0 +1,189 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_interests
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-10-29 15:57+0000\n"
+"PO-Revision-Date: 2014-10-29 12:58-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 1.5.4\n"
+
+#. module: account_interests
+#: code:addons/account_interests/partner.py:95
+#: code:addons/sources/odoo-addons/account_interests/partner.py:95
+#, python-format
+msgid " days. "
+msgstr "días. "
+
+#. module: account_interests
+#: field:account.account.interest,account_id:0
+#: model:ir.model,name:account_interests.model_account_account
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: account_interests
+#: model:ir.model,name:account_interests.model_account_account_interest
+msgid "Account Account Interest"
+msgstr "Cuenta Cuenta de Intereses"
+
+#. module: account_interests
+#: view:res.company:account_interests.view_kinesis_athletics_company_form
+msgid "Accounting"
+msgstr "Contabilidad"
+
+#. module: account_interests
+#: field:account.account.interest,analytic_account_id:0
+msgid "Analytic account"
+msgstr "Cuenta analítica"
+
+#. module: account_interests
+#: code:addons/account_interests/partner.py:96
+#: code:addons/sources/odoo-addons/account_interests/partner.py:96
+#, python-format
+msgid "Base(ARS): "
+msgstr "Base(ARS): "
+
+#. module: account_interests
+#: model:ir.model,name:account_interests.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: account_interests
+#: help:res.company,debt_interest_period:0
+msgid "Create interest for debt greater than x months"
+msgstr "Crear interés por una mayor deuda de por meses"
+
+#. module: account_interests
+#: field:account.account.interest,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: account_interests
+#: field:account.account.interest,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: account_interests
+#: field:account.account.interest,date_from:0
+msgid "Date From"
+msgstr "Fecha desde"
+
+#. module: account_interests
+#: field:account.account.interest,date_to:0
+msgid "Date To"
+msgstr "Fecha hasta"
+
+#. module: account_interests
+#: field:res.company,debt_interest_period:0
+msgid "Debt Interest Months"
+msgstr "Meses de interés de la deuda"
+
+#. module: account_interests
+#: code:addons/account_interests/partner.py:47
+#: code:addons/account_interests/partner.py:133
+#: code:addons/sources/odoo-addons/account_interests/partner.py:47
+#: code:addons/sources/odoo-addons/account_interests/partner.py:133
+#, python-format
+msgid "Error!"
+msgstr "Error!"
+
+#. module: account_interests
+#: field:account.account.interest,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: account_interests
+#: field:account.account.interest,interest_rate:0
+msgid "Interest"
+msgstr "Interés"
+
+#. module: account_interests
+#: field:account.account.interest,interest_account_id:0
+msgid "Interest Account"
+msgstr "Cuenta de Interés"
+
+#. module: account_interests
+#: code:addons/account_interests/partner.py:97
+#: code:addons/sources/odoo-addons/account_interests/partner.py:97
+#, python-format
+msgid "Interest Rate(%): "
+msgstr "Tasa de Interés(%): "
+
+#. module: account_interests
+#: view:account.account:account_interests.account_account_interest
+#: field:account.account,account_account_interest_ids:0
+msgid "Interest Rates"
+msgstr "Tasas de Interés"
+
+#. module: account_interests
+#: code:addons/account_interests/partner.py:263
+#: code:addons/sources/odoo-addons/account_interests/partner.py:263
+#, python-format
+msgid "Interests "
+msgstr "Intereses"
+
+#. module: account_interests
+#: view:account.account.interest:account_interests.account_account_interest_form
+msgid "Interst Rates"
+msgstr "Tasas de Interés"
+
+#. module: account_interests
+#: view:account.account.interest:account_interests.account_account_interest_list
+msgid "Intrest Rates"
+msgstr "Tasas de Interés"
+
+#. module: account_interests
+#: field:account.account.interest,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: account_interests
+#: field:account.account.interest,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: account_interests
+#: view:res.company:account_interests.view_kinesis_athletics_company_form
+msgid "Number of months for imputation of default interest"
+msgstr "Número de meses para la imputación de intereses de demora"
+
+#. module: account_interests
+#: model:ir.model,name:account_interests.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: account_interests
+#: code:addons/account_interests/partner.py:94
+#: code:addons/sources/odoo-addons/account_interests/partner.py:94
+#, python-format
+msgid "Period: "
+msgstr "Período: "
+
+#. module: account_interests
+#: code:addons/account_interests/partner.py:134
+#: code:addons/sources/odoo-addons/account_interests/partner.py:134
+#, python-format
+msgid "Please define sales journal for this company id = %d."
+msgstr "Please define sales journal for this company id = %d."
+
+#. module: account_interests
+#: code:addons/account_interests/partner.py:261
+#: code:addons/sources/odoo-addons/account_interests/partner.py:261
+#, python-format
+msgid "Punitive Interests "
+msgstr "Intereses Punitorios"
+
+#. module: account_interests
+#: code:addons/account_interests/partner.py:92
+#: code:addons/sources/odoo-addons/account_interests/partner.py:92
+#, python-format
+msgid "Punitive Interests Invoice: "
+msgstr "Factura de Intereses Punitorios:"

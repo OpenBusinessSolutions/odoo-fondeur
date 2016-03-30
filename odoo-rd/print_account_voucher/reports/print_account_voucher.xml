@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <template id="print_voucher_report_all">
+                    <t t-call="report.external_layout">
+                    <t t-foreach="objects" t-as="o">
+                        <div class="page">
+                            <div class="row">
+                                <div class="col-xs-5 col-xs-offset-7">
+                                </div>
+                            </div>
+                            <div class="row mt64 mb16 text-center">
+                                <h2>
+                                    <t t-if="o.type in ['sale']">
+                                        <span><b>Sales Receipt</b></span>
+                                    </t>
+                                    <t t-if="o.type in ['purchase']">
+                                        <span><b>Purchase Receipt</b></span>
+                                    </t>
+                                    <t t-if="o.type in ['receipt', 'payment']">
+                                        <span><b>Payment Receipt</b></span>
+                                    </t>
+                                </h2>
+                            </div>
+
+                            <table class="table table-bordered text-center table-condensed" >
+                                <thead>
+                                    <tr class="text-center" > 
+                                        <t t-if="o.type in ['sale', 'receipt']">
+                                            <th  class="text-center" ><span>Customer</span></th>
+                                        </t>
+                                        <t t-if="o.type in ['purchase','payment']">
+                                            <th  class="text-center" ><span>Supplier</span></th>
+                                        </t>
+                                        <th  class="text-center" ><span>Date</span></th>
+                                        <th  class="text-center" ><span>Receipt Number</span></th>
+                                        <th  class="text-center" ><span>Reference</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr >
+                                        <td >
+                                            <span t-esc="o.partner_id.name"/>
+                                        </td>
+                                        <td >
+                                            <span t-esc="formatLang(o.date,date=True)"/>
+                                        </td>
+                                        <t t-if="o.state == 'posted'">
+                                            <td ><span t-field="o.number"></span></td> 
+                                        </t>
+                                        <t t-if="o.state == 'draft'">
+                                            <td ><span></span></td> 
+                                        </t>
+                                        <t t-if="o.state == 'cancel'">
+                                            <td ><span>Cancelled</span></td> 
+                                        </t>
+                                        <td >
+                                            <span t-esc="o.reference"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table  table-condensed" >
+                                <thead class="text-right">
+                                    <tr class="text-right" style="border-top:hidden;"><td></td></tr>
+                                    <tr class="text-right" style="border-top:hidden;">
+                                        <th > <span>Description</span></th>
+                                        <th></th>
+                                        <th  class="text-right" ><span>Amount</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody >
+                                    <t t-foreach="getLines(o)" t-as="line">
+                                        <tr>
+                                            <t t-if="o.type in ['receipt', 'payment']">
+                                                <t  t-if="line['move_line_id']" >
+                                                    <td class="text-left"><span t-esc="line['move_line_id']['move_id']['name'] + ' (' +  line['move_line_id']['move_id']['ref'] + ')' "/>
+                                                    </td>
+                                                </t>
+                                                <t  t-if="not line['move_line_id']" >
+                                                    <td class="text-left"><span t-esc="line['account_id']['name'] + ' (' +  line['account_id']['code'] + ')' "/>
+                                                    </td>
+                                                </t>
+                                            </t>
+
+                                            <t t-if="o.type in ['sale', 'purchase']">
+                                            <td class="text-left"><span t-esc="line['name']"/></td>
+                                            </t>
+                                            <td></td>
+                                            <td class="text-right">
+                                                <span><t t-esc="formatLang(line['amount'],2)"/> 
+                                                <t t-esc="o.currency_id.symbol"/></span>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                    <tr  class="text-right">
+                                        <td width="70%"><span></span></td>
+                                        <td  class="text-left" style="border-top:2px solid black;">
+                                            <span><b>Net Total:</b></span>
+                                        </td>
+                                        <td  class="text-right" style="text-align:right;border-top:2px solid black;">
+                                            <span t-esc="formatLang((reduce(lambda x,y: x+y['amount'],getLines(o),0)),2)"/>  
+                                            <t t-esc="o.currency_id.symbol"/>
+                                        </td>
+                                    </tr>
+                                    <tr  class="text-right" style="border-top:hidden;">
+                                        <td></td>
+                                        <td   class="text-left" style="padding:0px 0px 0px 7px;border-bottom:1px solid black;">
+                                            <span><b>Taxes:</b></span>
+                                        </td>
+                                        <td style="padding:0px 7px 0px 0px;text-align:right;border-bottom:1px solid black;">
+                                            <span t-esc="formatLang(o.tax_amount, 2) "/>  
+                                            <t t-esc="o.currency_id.symbol"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border-top:hidden;"></td>
+                                        <td  class="text-left" ><span><b>Total:</b></span></td>
+                                        <td  style="text-align:right;">
+                                            <span t-esc="formatLang(o.amount, 2)"/>  
+                                            <t t-esc="o.currency_id.symbol"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table">
+                                <tr style="border-top:hidden;">
+                                    <td width="30%" t-if="o.type in ['sale', 'purchase']">
+                                        <span><b>Received by:   </b></span><span style="color:white;">..</span>
+                                        <span t-esc="user.name"/>
+                                    </td>
+                                    <td width="30%" t-if="o.type in ['receipt']">
+                                        <span><b>Received by:   </b></span><span style="color:white;">..</span>
+                                        <span t-esc="user.name"/>
+                                    </td>
+                                    <td width="30%" t-if="o.type in ['payment']">
+                                        <span><b>Paid by:   </b></span><span style="color:white;">....</span>
+                                        <span t-esc="user.name"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="table">
+                                <tr style="border-top:hidden;">
+                                    <td style="width:31%;">
+                                        <span><b>Signature:<span style="color:white;">....</span>___________________________</b></span>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="table">
+                                <tr style="border-top:hidden;">
+                                    <td>
+                                        <span><b>Narration / Notes:</b></span>  
+                                    <p t-if="o.narration">
+                                        <span t-field="o.narration"/>
+                                    </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="table">
+                                <tr style="border-top:hidden;text-align: center;">
+                                    <td width="10%" t-if="o.type in ['sale', 'receipt']">
+                                        <span><b>Thank you for your business!</b></span>  
+                                    </td>
+                                </tr>
+                            </table>
+                    
+                </div>
+            </t></t>
+        </template>
+
+
+    </data>
+</openerp>

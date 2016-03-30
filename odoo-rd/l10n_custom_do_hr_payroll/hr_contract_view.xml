@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="hr_contract_news_inherit">
+			<field name="name">hr.contract.news.inherit</field>
+			<field name="model">hr.contract</field>
+			<field name="priority">20</field>
+			<field name="inherit_id" ref="hr_contract.hr_contract_view_form" />
+			<field name="arch" type="xml">
+				<data>
+				  <xpath expr="//page[@name='information']" position="after">
+				    <page name="contract_news" string="Novedades del Contrato">
+						<separator/>
+						<group string="Otros Descuentos" col="2">
+							
+                            <group string="Avance Bonificacion">
+								<field name="avance_bonificacion_apply"/>
+								<field name="avance_bonificacion_discount_amount" attrs="{'invisible':[('avance_bonificacion_apply','=',False)], 'required':[('avance_bonificacion_apply','=',True)]}"/>
+								<field name="avance_bonificacion_frecuency_type" attrs="{'invisible':[('avance_bonificacion_apply','=',False)], 'required':[('avance_bonificacion_apply','=',True)]}"/>
+								<field name="avance_bonificacion_apply_on" attrs="{'invisible':[('avance_bonificacion_apply','=',False)], 'required':[('avance_bonificacion_apply','=',True)] }"/>
+								<field name="avance_bonificacion_frecuency_number" attrs="{'readonly':[('avance_bonificacion_frecuency_type','=', 'fixed')],'required':[('avance_bonificacion_frecuency_type','=', 'variable')] ,'invisible':[('avance_bonificacion_apply','=',False)], 'invisible':[('avance_bonificacion_frecuency_type','=','fixed')]}"/>
+								<field name="avance_bonificacion_start_date" attrs="{'readonly':[('avance_bonificacion_frecuency_type','=', 'fixed')],'required':[('avance_bonificacion_frecuency_type','=', 'variable')] ,'invisible':[('avance_bonificacion_apply','=',False)], 'invisible':[('avance_bonificacion_frecuency_type','=','fixed')]}"/>
+								<field name="avance_bonificacion_end_date" attrs="{'readonly':[('avance_bonificacion_frecuency_type','=', 'fixed')],'required':[('avance_bonificacion_frecuency_type','=', 'variable')] ,'invisible':[('avance_bonificacion_apply','=',False)], 'invisible':[('avance_bonificacion_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+                            <group string="Ahorro Cooperativa">
+								<field name="ahorro_cooperativa_apply"/>
+								<field name="ahorro_cooperativa_discount_amount" attrs="{'invisible':[('ahorro_cooperativa_apply','=',False)], 'required':[('ahorro_cooperativa_apply','=',True)]}"/>
+								<field name="ahorro_cooperativa_frecuency_type" attrs="{'invisible':[('ahorro_cooperativa_apply','=',False)], 'required':[('ahorro_cooperativa_apply','=',True)]}"/>
+								<field name="ahorro_cooperativa_apply_on" attrs="{'invisible':[('ahorro_cooperativa_apply','=',False)], 'required':[('ahorro_cooperativa_apply','=',True)] }"/>
+								<field name="ahorro_cooperativa_frecuency_number" attrs="{'readonly':[('ahorro_cooperativa_frecuency_type','=', 'fixed')],'required':[('ahorro_cooperativa_frecuency_type','=', 'variable')] ,'invisible':[('ahorro_cooperativa_apply','=',False)], 'invisible':[('ahorro_cooperativa_frecuency_type','=','fixed')]}"/>
+								<field name="ahorro_cooperativa_start_date" attrs="{'readonly':[('ahorro_cooperativa_frecuency_type','=', 'fixed')],'required':[('ahorro_cooperativa_frecuency_type','=', 'variable')] ,'invisible':[('ahorro_cooperativa_apply','=',False)], 'invisible':[('ahorro_cooperativa_frecuency_type','=','fixed')]}"/>
+								<field name="ahorro_cooperativa_end_date" attrs="{'readonly':[('ahorro_cooperativa_frecuency_type','=', 'fixed')],'required':[('ahorro_cooperativa_frecuency_type','=', 'variable')] ,'invisible':[('ahorro_cooperativa_apply','=',False)], 'invisible':[('ahorro_cooperativa_frecuency_type','=','fixed')]}"/>
+							</group>
+
+                            <group string="Ajuste Salario (Egreso)">
+								<field name="ajuste_salario_egr_apply"/>
+								<field name="ajuste_salario_egr_discount_amount" attrs="{'invisible':[('ajuste_salario_egr_apply','=',False)], 'required':[('ajuste_salario_egr_apply','=',True)]}"/>
+								<field name="ajuste_salario_egr_frecuency_type" attrs="{'invisible':[('ajuste_salario_egr_apply','=',False)], 'required':[('ajuste_salario_egr_apply','=',True)]}"/>
+								<field name="ajuste_salario_egr_apply_on" attrs="{'invisible':[('ajuste_salario_egr_apply','=',False)], 'required':[('ajuste_salario_egr_apply','=',True)] }"/>
+								<field name="ajuste_salario_egr_frecuency_number" attrs="{'readonly':[('ajuste_salario_egr_frecuency_type','=', 'fixed')],'required':[('ajuste_salario_egr_frecuency_type','=', 'variable')] ,'invisible':[('ajuste_salario_egr_apply','=',False)], 'invisible':[('ajuste_salario_egr_frecuency_type','=','fixed')]}"/>
+								<field name="ajuste_salario_egr_start_date" attrs="{'readonly':[('ajuste_salario_egr_frecuency_type','=', 'fixed')],'required':[('ajuste_salario_egr_frecuency_type','=', 'variable')] ,'invisible':[('ajuste_salario_egr_apply','=',False)], 'invisible':[('ajuste_salario_egr_frecuency_type','=','fixed')]}"/>
+								<field name="ajuste_salario_egr_end_date" attrs="{'readonly':[('ajuste_salario_egr_frecuency_type','=', 'fixed')],'required':[('ajuste_salario_egr_frecuency_type','=', 'variable')] ,'invisible':[('ajuste_salario_egr_apply','=',False)], 'invisible':[('ajuste_salario_egr_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+                            <group string="Avance Regalia">
+								<field name="avance_regalia_apply"/>
+								<field name="avance_regalia_discount_amount" attrs="{'invisible':[('avance_regalia_apply','=',False)], 'required':[('avance_regalia_apply','=',True)]}"/>
+								<field name="avance_regalia_frecuency_type" attrs="{'invisible':[('avance_regalia_apply','=',False)], 'required':[('avance_regalia_apply','=',True)]}"/>
+								<field name="avance_regalia_apply_on" attrs="{'invisible':[('avance_regalia_apply','=',False)], 'required':[('avance_regalia_apply','=',True)] }"/>
+								<field name="avance_regalia_frecuency_number" attrs="{'readonly':[('avance_regalia_frecuency_type','=', 'fixed')],'required':[('avance_regalia_frecuency_type','=', 'variable')] ,'invisible':[('avance_regalia_apply','=',False)], 'invisible':[('avance_regalia_frecuency_type','=','fixed')]}"/>
+								<field name="avance_regalia_start_date" attrs="{'readonly':[('avance_regalia_frecuency_type','=', 'fixed')],'required':[('avance_regalia_frecuency_type','=', 'variable')] ,'invisible':[('avance_regalia_apply','=',False)], 'invisible':[('avance_regalia_frecuency_type','=','fixed')]}"/>
+								<field name="avance_regalia_end_date" attrs="{'readonly':[('avance_regalia_frecuency_type','=', 'fixed')],'required':[('avance_regalia_frecuency_type','=', 'variable')] ,'invisible':[('avance_regalia_apply','=',False)], 'invisible':[('avance_regalia_frecuency_type','=','fixed')]}"/>
+							</group>
+
+                            
+                            <group string="Avance Sueldo">
+								<field name="avance_sueldo_apply"/>
+								<field name="avance_sueldo_discount_amount" attrs="{'invisible':[('avance_sueldo_apply','=',False)], 'required':[('avance_sueldo_apply','=',True)]}"/>
+								<field name="avance_sueldo_frecuency_type" attrs="{'invisible':[('avance_sueldo_apply','=',False)], 'required':[('avance_sueldo_apply','=',True)]}"/>
+								<field name="avance_sueldo_apply_on" attrs="{'invisible':[('avance_sueldo_apply','=',False)], 'required':[('avance_sueldo_apply','=',True)] }"/>
+								<field name="avance_sueldo_frecuency_number" attrs="{'readonly':[('avance_sueldo_frecuency_type','=', 'fixed')],'required':[('avance_sueldo_frecuency_type','=', 'variable')] ,'invisible':[('avance_sueldo_apply','=',False)], 'invisible':[('avance_sueldo_frecuency_type','=','fixed')]}"/>
+								<field name="avance_sueldo_start_date" attrs="{'readonly':[('avance_sueldo_frecuency_type','=', 'fixed')],'required':[('avance_sueldo_frecuency_type','=', 'variable')] ,'invisible':[('avance_sueldo_apply','=',False)], 'invisible':[('avance_sueldo_frecuency_type','=','fixed')]}"/>
+								<field name="avance_sueldo_end_date" attrs="{'readonly':[('avance_sueldo_frecuency_type','=', 'fixed')],'required':[('avance_sueldo_frecuency_type','=', 'variable')] ,'invisible':[('avance_sueldo_apply','=',False)], 'invisible':[('avance_sueldo_frecuency_type','=','fixed')]}"/>
+							</group>
+
+                            <group string="Prestamo AWM">
+								<field name="prestamo_awm_apply"/>
+								<field name="prestamo_awm_discount_amount" attrs="{'invisible':[('prestamo_awm_apply','=',False)], 'required':[('prestamo_awm_apply','=',True)]}"/>
+								<field name="prestamo_awm_frecuency_type" attrs="{'invisible':[('prestamo_awm_apply','=',False)], 'required':[('prestamo_awm_apply','=',True)]}"/>
+								<field name="prestamo_awm_apply_on" attrs="{'invisible':[('prestamo_awm_apply','=',False)], 'required':[('prestamo_awm_apply','=',True)] }"/>
+								<field name="prestamo_awm_frecuency_number" attrs="{'readonly':[('prestamo_awm_frecuency_type','=', 'fixed')],'required':[('prestamo_awm_frecuency_type','=', 'variable')] ,'invisible':[('prestamo_awm_apply','=',False)], 'invisible':[('prestamo_awm_frecuency_type','=','fixed')]}"/>
+								<field name="prestamo_awm_start_date" attrs="{'readonly':[('prestamo_awm_frecuency_type','=', 'fixed')],'required':[('prestamo_awm_frecuency_type','=', 'variable')] ,'invisible':[('prestamo_awm_apply','=',False)], 'invisible':[('prestamo_awm_frecuency_type','=','fixed')]}"/>
+								<field name="prestamo_awm_end_date" attrs="{'readonly':[('prestamo_awm_frecuency_type','=', 'fixed')],'required':[('prestamo_awm_frecuency_type','=', 'variable')] ,'invisible':[('prestamo_awm_apply','=',False)], 'invisible':[('prestamo_awm_frecuency_type','=','fixed')]}"/>
+							</group>
+
+                            
+                            <group string="Prestamos CHC">
+								<field name="prestamos_chc_apply"/>
+								<field name="prestamos_chc_discount_amount" attrs="{'invisible':[('prestamos_chc_apply','=',False)], 'required':[('prestamos_chc_apply','=',True)]}"/>
+								<field name="prestamos_chc_frecuency_type" attrs="{'invisible':[('prestamos_chc_apply','=',False)], 'required':[('prestamos_chc_apply','=',True)]}"/>
+								<field name="prestamos_chc_apply_on" attrs="{'invisible':[('prestamos_chc_apply','=',False)], 'required':[('prestamos_chc_apply','=',True)] }"/>
+								<field name="prestamos_chc_frecuency_number" attrs="{'readonly':[('prestamos_chc_frecuency_type','=', 'fixed')],'required':[('prestamos_chc_frecuency_type','=', 'variable')] ,'invisible':[('prestamos_chc_apply','=',False)], 'invisible':[('prestamos_chc_frecuency_type','=','fixed')]}"/>
+								<field name="prestamos_chc_start_date" attrs="{'readonly':[('prestamos_chc_frecuency_type','=', 'fixed')],'required':[('prestamos_chc_frecuency_type','=', 'variable')] ,'invisible':[('prestamos_chc_apply','=',False)], 'invisible':[('prestamos_chc_frecuency_type','=','fixed')]}"/>
+								<field name="prestamos_chc_end_date" attrs="{'readonly':[('prestamos_chc_frecuency_type','=', 'fixed')],'required':[('prestamos_chc_frecuency_type','=', 'variable')] ,'invisible':[('prestamos_chc_apply','=',False)], 'invisible':[('prestamos_chc_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+                            <group string="Comedor">
+								<field name="comedor_apply"/>
+								<field name="comedor_discount_amount" attrs="{'invisible':[('comedor_apply','=',False)], 'required':[('comedor_apply','=',True)]}"/>
+								<field name="comedor_frecuency_type" attrs="{'invisible':[('comedor_apply','=',False)], 'required':[('comedor_apply','=',True)]}"/>
+								<field name="comedor_apply_on" attrs="{'invisible':[('comedor_apply','=',False)], 'required':[('comedor_apply','=',True)] }"/>
+								<field name="comedor_frecuency_number" attrs="{'readonly':[('comedor_frecuency_type','=', 'fixed')],'required':[('comedor_frecuency_type','=', 'variable')] ,'invisible':[('comedor_apply','=',False)], 'invisible':[('comedor_frecuency_type','=','fixed')]}"/>
+								<field name="comedor_start_date" attrs="{'readonly':[('comedor_frecuency_type','=', 'fixed')],'required':[('comedor_frecuency_type','=', 'variable')] ,'invisible':[('comedor_apply','=',False)], 'invisible':[('comedor_frecuency_type','=','fixed')]}"/>
+								<field name="comedor_end_date" attrs="{'readonly':[('comedor_frecuency_type','=', 'fixed')],'required':[('comedor_frecuency_type','=', 'variable')] ,'invisible':[('comedor_apply','=',False)], 'invisible':[('comedor_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+                            <group string="Farmacia">
+								<field name="farmacia_apply"/>
+								<field name="farmacia_discount_amount" attrs="{'invisible':[('farmacia_apply','=',False)], 'required':[('farmacia_apply','=',True)]}"/>
+								<field name="farmacia_frecuency_type" attrs="{'invisible':[('farmacia_apply','=',False)], 'required':[('farmacia_apply','=',True)]}"/>
+								<field name="farmacia_apply_on" attrs="{'invisible':[('farmacia_apply','=',False)], 'required':[('farmacia_apply','=',True)] }"/>
+								<field name="farmacia_frecuency_number" attrs="{'readonly':[('farmacia_frecuency_type','=', 'fixed')],'required':[('farmacia_frecuency_type','=', 'variable')] ,'invisible':[('farmacia_apply','=',False)], 'invisible':[('farmacia_frecuency_type','=','fixed')]}"/>
+								<field name="farmacia_start_date" attrs="{'readonly':[('farmacia_frecuency_type','=', 'fixed')],'required':[('farmacia_frecuency_type','=', 'variable')] ,'invisible':[('farmacia_apply','=',False)], 'invisible':[('farmacia_frecuency_type','=','fixed')]}"/>
+								<field name="farmacia_end_date" attrs="{'readonly':[('farmacia_frecuency_type','=', 'fixed')],'required':[('farmacia_frecuency_type','=', 'variable')] ,'invisible':[('farmacia_apply','=',False)], 'invisible':[('farmacia_frecuency_type','=','fixed')]}"/>
+							</group>
+
+                            <group string="Navicoop">
+								<field name="navicoop_apply"/>
+								<field name="navicoop_discount_amount" attrs="{'invisible':[('navicoop_apply','=',False)], 'required':[('navicoop_apply','=',True)]}"/>
+								<field name="navicoop_frecuency_type" attrs="{'invisible':[('navicoop_apply','=',False)], 'required':[('navicoop_apply','=',True)]}"/>
+								<field name="navicoop_apply_on" attrs="{'invisible':[('navicoop_apply','=',False)], 'required':[('navicoop_apply','=',True)] }"/>
+								<field name="navicoop_frecuency_number" attrs="{'readonly':[('navicoop_frecuency_type','=', 'fixed')],'required':[('navicoop_frecuency_type','=', 'variable')] ,'invisible':[('navicoop_apply','=',False)], 'invisible':[('navicoop_frecuency_type','=','fixed')]}"/>
+								<field name="navicoop_start_date" attrs="{'readonly':[('navicoop_frecuency_type','=', 'fixed')],'required':[('navicoop_frecuency_type','=', 'variable')] ,'invisible':[('navicoop_apply','=',False)], 'invisible':[('navicoop_frecuency_type','=','fixed')]}"/>
+								<field name="navicoop_end_date" attrs="{'readonly':[('navicoop_frecuency_type','=', 'fixed')],'required':[('navicoop_frecuency_type','=', 'variable')] ,'invisible':[('navicoop_apply','=',False)], 'invisible':[('navicoop_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+                            <group string="Otros Descuentos">
+								<field name="otros_desc_apply"/>
+								<field name="otros_desc_discount_amount" attrs="{'invisible':[('otros_desc_apply','=',False)], 'required':[('otros_desc_apply','=',True)]}"/>
+								<field name="otros_desc_frecuency_type" attrs="{'invisible':[('otros_desc_apply','=',False)], 'required':[('otros_desc_apply','=',True)]}"/>
+								<field name="otros_desc_apply_on" attrs="{'invisible':[('otros_desc_apply','=',False)], 'required':[('otros_desc_apply','=',True)] }"/>
+								<field name="otros_desc_frecuency_number" attrs="{'readonly':[('otros_desc_frecuency_type','=', 'fixed')],'required':[('otros_desc_frecuency_type','=', 'variable')] ,'invisible':[('otros_desc_apply','=',False)], 'invisible':[('otros_desc_frecuency_type','=','fixed')]}"/>
+								<field name="otros_desc_start_date" attrs="{'readonly':[('otros_desc_frecuency_type','=', 'fixed')],'required':[('otros_desc_frecuency_type','=', 'variable')] ,'invisible':[('otros_desc_apply','=',False)], 'invisible':[('otros_desc_frecuency_type','=','fixed')]}"/>
+								<field name="otros_desc_end_date" attrs="{'readonly':[('otros_desc_frecuency_type','=', 'fixed')],'required':[('otros_desc_frecuency_type','=', 'variable')] ,'invisible':[('otros_desc_apply','=',False)], 'invisible':[('otros_desc_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+                            <group string="Optica">
+								<field name="optica_apply"/>
+								<field name="optica_discount_amount" attrs="{'invisible':[('optica_apply','=',False)], 'required':[('optica_apply','=',True)]}"/>
+								<field name="optica_frecuency_type" attrs="{'invisible':[('optica_apply','=',False)], 'required':[('optica_apply','=',True)]}"/>
+								<field name="optica_apply_on" attrs="{'invisible':[('optica_apply','=',False)], 'required':[('optica_apply','=',True)] }"/>
+								<field name="optica_frecuency_number" attrs="{'readonly':[('optica_frecuency_type','=', 'fixed')],'required':[('optica_frecuency_type','=', 'variable')] ,'invisible':[('optica_apply','=',False)], 'invisible':[('optica_frecuency_type','=','fixed')]}"/>
+								<field name="optica_start_date" attrs="{'readonly':[('optica_frecuency_type','=', 'fixed')],'required':[('optica_frecuency_type','=', 'variable')] ,'invisible':[('optica_apply','=',False)], 'invisible':[('optica_frecuency_type','=','fixed')]}"/>
+								<field name="optica_end_date" attrs="{'readonly':[('optica_frecuency_type','=', 'fixed')],'required':[('optica_frecuency_type','=', 'variable')] ,'invisible':[('optica_apply','=',False)], 'invisible':[('optica_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+                            <group string="Prestamo Cooperativa">
+								<field name="prestamo_cooperativa_apply"/>
+								<field name="prestamo_cooperativa_discount_amount" attrs="{'invisible':[('prestamo_cooperativa_apply','=',False)], 'required':[('prestamo_cooperativa_apply','=',True)]}"/>
+								<field name="prestamo_cooperativa_frecuency_type" attrs="{'invisible':[('prestamo_cooperativa_apply','=',False)], 'required':[('prestamo_cooperativa_apply','=',True)]}"/>
+								<field name="prestamo_cooperativa_apply_on" attrs="{'invisible':[('prestamo_cooperativa_apply','=',False)], 'required':[('prestamo_cooperativa_apply','=',True)] }"/>
+								<field name="prestamo_cooperativa_frecuency_number" attrs="{'readonly':[('prestamo_cooperativa_frecuency_type','=', 'fixed')],'required':[('prestamo_cooperativa_frecuency_type','=', 'variable')] ,'invisible':[('prestamo_cooperativa_apply','=',False)], 'invisible':[('prestamo_cooperativa_frecuency_type','=','fixed')]}"/>
+								<field name="prestamo_cooperativa_start_date" attrs="{'readonly':[('prestamo_cooperativa_frecuency_type','=', 'fixed')],'required':[('prestamo_cooperativa_frecuency_type','=', 'variable')] ,'invisible':[('prestamo_cooperativa_apply','=',False)], 'invisible':[('prestamo_cooperativa_frecuency_type','=','fixed')]}"/>
+								<field name="prestamo_cooperativa_end_date" attrs="{'readonly':[('prestamo_cooperativa_frecuency_type','=', 'fixed')],'required':[('prestamo_cooperativa_frecuency_type','=', 'variable')] ,'invisible':[('prestamo_cooperativa_apply','=',False)], 'invisible':[('prestamo_cooperativa_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+                            <group string="Pago Per Capita Adicional">
+								<field name="per_capita_apply"/>
+								<field name="per_capita_discount_amount" attrs="{'invisible':[('per_capita_apply','=',False)], 'required':[('per_capita_apply','=',True)]}"/>
+								<field name="per_capita_frecuency_type" attrs="{'invisible':[('per_capita_apply','=',False)], 'required':[('per_capita_apply','=',True)]}"/>
+								<field name="per_capita_apply_on" attrs="{'invisible':[('per_capita_apply','=',False)], 'required':[('per_capita_apply','=',True)] }"/>
+								<field name="per_capita_frecuency_number" attrs="{'readonly':[('per_capita_frecuency_type','=', 'fixed')],'required':[('per_capita_frecuency_type','=', 'variable')] ,'invisible':[('per_capita_apply','=',False)], 'invisible':[('per_capita_frecuency_type','=','fixed')]}"/>
+								<field name="per_capita_start_date" attrs="{'readonly':[('per_capita_frecuency_type','=', 'fixed')],'required':[('per_capita_frecuency_type','=', 'variable')] ,'invisible':[('per_capita_apply','=',False)], 'invisible':[('per_capita_frecuency_type','=','fixed')]}"/>
+								<field name="per_capita_end_date" attrs="{'readonly':[('per_capita_frecuency_type','=', 'fixed')],'required':[('per_capita_frecuency_type','=', 'variable')] ,'invisible':[('per_capita_apply','=',False)], 'invisible':[('per_capita_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+                            <group string="Adicional TSS">
+								<field name="adicional_tss_apply"/>
+								<field name="adicional_tss_discount_amount" attrs="{'invisible':[('adicional_tss_apply','=',False)], 'required':[('adicional_tss_apply','=',True)]}"/>
+								<field name="adicional_tss_frecuency_type" attrs="{'invisible':[('adicional_tss_apply','=',False)], 'required':[('adicional_tss_apply','=',True)]}"/>
+								<field name="adicional_tss_apply_on" attrs="{'invisible':[('adicional_tss_apply','=',False)], 'required':[('adicional_tss_apply','=',True)] }"/>
+								<field name="adicional_tss_frecuency_number" attrs="{'readonly':[('adicional_tss_frecuency_type','=', 'fixed')],'required':[('adicional_tss_frecuency_type','=', 'variable')] ,'invisible':[('adicional_tss_apply','=',False)], 'invisible':[('adicional_tss_frecuency_type','=','fixed')]}"/>
+								<field name="adicional_tss_start_date" attrs="{'readonly':[('adicional_tss_frecuency_type','=', 'fixed')],'required':[('adicional_tss_frecuency_type','=', 'variable')] ,'invisible':[('adicional_tss_apply','=',False)], 'invisible':[('adicional_tss_frecuency_type','=','fixed')]}"/>
+								<field name="adicional_tss_end_date" attrs="{'readonly':[('adicional_tss_frecuency_type','=', 'fixed')],'required':[('adicional_tss_frecuency_type','=', 'variable')] ,'invisible':[('adicional_tss_apply','=',False)], 'invisible':[('adicional_tss_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+                            <group string="Otros Prestamos">
+								<field name="otros_prestamos_apply"/>
+								<field name="otros_prestamos_discount_amount" attrs="{'invisible':[('otros_prestamos_apply','=',False)], 'required':[('otros_prestamos_apply','=',True)]}"/>
+								<field name="otros_prestamos_frecuency_type" attrs="{'invisible':[('otros_prestamos_apply','=',False)], 'required':[('otros_prestamos_apply','=',True)]}"/>
+								<field name="otros_prestamos_apply_on" attrs="{'invisible':[('otros_prestamos_apply','=',False)], 'required':[('otros_prestamos_apply','=',True)] }"/>
+								<field name="otros_prestamos_frecuency_number" attrs="{'readonly':[('otros_prestamos_frecuency_type','=', 'fixed')],'required':[('otros_prestamos_frecuency_type','=', 'variable')] ,'invisible':[('otros_prestamos_apply','=',False)], 'invisible':[('otros_prestamos_frecuency_type','=','fixed')]}"/>
+								<field name="otros_prestamos_start_date" attrs="{'readonly':[('otros_prestamos_frecuency_type','=', 'fixed')],'required':[('otros_prestamos_frecuency_type','=', 'variable')] ,'invisible':[('otros_prestamos_apply','=',False)], 'invisible':[('otros_prestamos_frecuency_type','=','fixed')]}"/>
+								<field name="otros_prestamos_end_date" attrs="{'readonly':[('otros_prestamos_frecuency_type','=', 'fixed')],'required':[('otros_prestamos_frecuency_type','=', 'variable')] ,'invisible':[('otros_prestamos_apply','=',False)], 'invisible':[('otros_prestamos_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+                            <group string="Reserva Educativa">
+								<field name="reserva_educativa_apply"/>
+								<field name="reserva_educativa_discount_amount" attrs="{'invisible':[('reserva_educativa_apply','=',False)], 'required':[('reserva_educativa_apply','=',True)]}"/>
+								<field name="reserva_educativa_frecuency_type" attrs="{'invisible':[('reserva_educativa_apply','=',False)], 'required':[('reserva_educativa_apply','=',True)]}"/>
+								<field name="reserva_educativa_apply_on" attrs="{'invisible':[('reserva_educativa_apply','=',False)], 'required':[('reserva_educativa_apply','=',True)] }"/>
+								<field name="reserva_educativa_frecuency_number" attrs="{'readonly':[('reserva_educativa_frecuency_type','=', 'fixed')],'required':[('reserva_educativa_frecuency_type','=', 'variable')] ,'invisible':[('reserva_educativa_apply','=',False)], 'invisible':[('reserva_educativa_frecuency_type','=','fixed')]}"/>
+								<field name="reserva_educativa_start_date" attrs="{'readonly':[('reserva_educativa_frecuency_type','=', 'fixed')],'required':[('reserva_educativa_frecuency_type','=', 'variable')] ,'invisible':[('reserva_educativa_apply','=',False)], 'invisible':[('reserva_educativa_frecuency_type','=','fixed')]}"/>
+								<field name="reserva_educativa_end_date" attrs="{'readonly':[('reserva_educativa_frecuency_type','=', 'fixed')],'required':[('reserva_educativa_frecuency_type','=', 'variable')] ,'invisible':[('reserva_educativa_apply','=',False)], 'invisible':[('reserva_educativa_frecuency_type','=','fixed')]}"/>
+							</group>
+
+                            <group string="Reparacion Vehiculo">
+								<field name="reparacion_vehiculo_apply"/>
+								<field name="reparacion_vehiculo_discount_amount" attrs="{'invisible':[('reparacion_vehiculo_apply','=',False)], 'required':[('reparacion_vehiculo_apply','=',True)]}"/>
+								<field name="reparacion_vehiculo_frecuency_type" attrs="{'invisible':[('reparacion_vehiculo_apply','=',False)], 'required':[('reparacion_vehiculo_apply','=',True)]}"/>
+								<field name="reparacion_vehiculo_apply_on" attrs="{'invisible':[('reparacion_vehiculo_apply','=',False)], 'required':[('reparacion_vehiculo_apply','=',True)] }"/>
+								<field name="reparacion_vehiculo_frecuency_number" attrs="{'readonly':[('reparacion_vehiculo_frecuency_type','=', 'fixed')],'required':[('reparacion_vehiculo_frecuency_type','=', 'variable')] ,'invisible':[('reparacion_vehiculo_apply','=',False)], 'invisible':[('reparacion_vehiculo_frecuency_type','=','fixed')]}"/>
+								<field name="reparacion_vehiculo_start_date" attrs="{'readonly':[('reparacion_vehiculo_frecuency_type','=', 'fixed')],'required':[('reparacion_vehiculo_frecuency_type','=', 'variable')] ,'invisible':[('reparacion_vehiculo_apply','=',False)], 'invisible':[('reparacion_vehiculo_frecuency_type','=','fixed')]}"/>
+								<field name="reparacion_vehiculo_end_date" attrs="{'readonly':[('reparacion_vehiculo_frecuency_type','=', 'fixed')],'required':[('reparacion_vehiculo_frecuency_type','=', 'variable')] ,'invisible':[('reparacion_vehiculo_apply','=',False)], 'invisible':[('reparacion_vehiculo_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+                            <group string="Seguro Medico ARS">
+								<field name="seguro_medico_apply"/>
+								<field name="seguro_medico_discount_amount" attrs="{'invisible':[('seguro_medico_apply','=',False)], 'required':[('seguro_medico_apply','=',True)]}"/>
+								<field name="seguro_medico_frecuency_type" attrs="{'invisible':[('seguro_medico_apply','=',False)], 'required':[('seguro_medico_apply','=',True)]}"/>
+								<field name="seguro_medico_apply_on" attrs="{'invisible':[('seguro_medico_apply','=',False)], 'required':[('seguro_medico_apply','=',True)] }"/>
+								<field name="seguro_medico_frecuency_number" attrs="{'readonly':[('seguro_medico_frecuency_type','=', 'fixed')],'required':[('seguro_medico_frecuency_type','=', 'variable')] ,'invisible':[('seguro_medico_apply','=',False)], 'invisible':[('seguro_medico_frecuency_type','=','fixed')]}"/>
+								<field name="seguro_medico_start_date" attrs="{'readonly':[('seguro_medico_frecuency_type','=', 'fixed')],'required':[('seguro_medico_frecuency_type','=', 'variable')] ,'invisible':[('seguro_medico_apply','=',False)], 'invisible':[('seguro_medico_frecuency_type','=','fixed')]}"/>
+								<field name="seguro_medico_end_date" attrs="{'readonly':[('seguro_medico_frecuency_type','=', 'fixed')],'required':[('seguro_medico_frecuency_type','=', 'variable')] ,'invisible':[('seguro_medico_apply','=',False)], 'invisible':[('seguro_medico_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+                            <group string="Tienda Cooperativa">
+								<field name="tienda_cooperativa_apply"/>
+								<field name="tienda_cooperativa_discount_amount" attrs="{'invisible':[('tienda_cooperativa_apply','=',False)], 'required':[('tienda_cooperativa_apply','=',True)]}"/>
+								<field name="tienda_cooperativa_frecuency_type" attrs="{'invisible':[('tienda_cooperativa_apply','=',False)], 'required':[('tienda_cooperativa_apply','=',True)]}"/>
+								<field name="tienda_cooperativa_apply_on" attrs="{'invisible':[('tienda_cooperativa_apply','=',False)], 'required':[('tienda_cooperativa_apply','=',True)] }"/>
+								<field name="tienda_cooperativa_frecuency_number" attrs="{'readonly':[('tienda_cooperativa_frecuency_type','=', 'fixed')],'required':[('tienda_cooperativa_frecuency_type','=', 'variable')] ,'invisible':[('tienda_cooperativa_apply','=',False)], 'invisible':[('tienda_cooperativa_frecuency_type','=','fixed')]}"/>
+								<field name="tienda_cooperativa_start_date" attrs="{'readonly':[('tienda_cooperativa_frecuency_type','=', 'fixed')],'required':[('tienda_cooperativa_frecuency_type','=', 'variable')] ,'invisible':[('tienda_cooperativa_apply','=',False)], 'invisible':[('tienda_cooperativa_frecuency_type','=','fixed')]}"/>
+								<field name="tienda_cooperativa_end_date" attrs="{'readonly':[('tienda_cooperativa_frecuency_type','=', 'fixed')],'required':[('tienda_cooperativa_frecuency_type','=', 'variable')] ,'invisible':[('tienda_cooperativa_apply','=',False)], 'invisible':[('tienda_cooperativa_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+                            <group string="Telefono">
+								<field name="telefono_apply"/>
+								<field name="telefono_discount_amount" attrs="{'invisible':[('telefono_apply','=',False)], 'required':[('telefono_apply','=',True)]}"/>
+								<field name="telefono_frecuency_type" attrs="{'invisible':[('telefono_apply','=',False)], 'required':[('telefono_apply','=',True)]}"/>
+								<field name="telefono_apply_on" attrs="{'invisible':[('telefono_apply','=',False)], 'required':[('telefono_apply','=',True)] }"/>
+								<field name="telefono_frecuency_number" attrs="{'readonly':[('telefono_frecuency_type','=', 'fixed')],'required':[('telefono_frecuency_type','=', 'variable')] ,'invisible':[('telefono_apply','=',False)], 'invisible':[('telefono_frecuency_type','=','fixed')]}"/>
+								<field name="telefono_start_date" attrs="{'readonly':[('telefono_frecuency_type','=', 'fixed')],'required':[('telefono_frecuency_type','=', 'variable')] ,'invisible':[('telefono_apply','=',False)], 'invisible':[('telefono_frecuency_type','=','fixed')]}"/>
+								<field name="telefono_end_date" attrs="{'readonly':[('telefono_frecuency_type','=', 'fixed')],'required':[('telefono_frecuency_type','=', 'variable')] ,'invisible':[('telefono_apply','=',False)], 'invisible':[('telefono_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+                            <group string="Uniforme">
+								<field name="uniforme_apply"/>
+								<field name="uniforme_discount_amount" attrs="{'invisible':[('uniforme_apply','=',False)], 'required':[('uniforme_apply','=',True)]}"/>
+								<field name="uniforme_frecuency_type" attrs="{'invisible':[('uniforme_apply','=',False)], 'required':[('uniforme_apply','=',True)]}"/>
+								<field name="uniforme_apply_on" attrs="{'invisible':[('uniforme_apply','=',False)], 'required':[('uniforme_apply','=',True)] }"/>
+								<field name="uniforme_frecuency_number" attrs="{'readonly':[('uniforme_frecuency_type','=', 'fixed')],'required':[('uniforme_frecuency_type','=', 'variable')] ,'invisible':[('uniforme_apply','=',False)], 'invisible':[('uniforme_frecuency_type','=','fixed')]}"/>
+								<field name="uniforme_start_date" attrs="{'readonly':[('uniforme_frecuency_type','=', 'fixed')],'required':[('uniforme_frecuency_type','=', 'variable')] ,'invisible':[('uniforme_apply','=',False)], 'invisible':[('uniforme_frecuency_type','=','fixed')]}"/>
+								<field name="uniforme_end_date" attrs="{'readonly':[('uniforme_frecuency_type','=', 'fixed')],'required':[('uniforme_frecuency_type','=', 'variable')] ,'invisible':[('uniforme_apply','=',False)], 'invisible':[('uniforme_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+                            <group string="Ventas Articulos">
+								<field name="ventas_articulos_apply"/>
+								<field name="ventas_articulos_discount_amount" attrs="{'invisible':[('ventas_articulos_apply','=',False)], 'required':[('ventas_articulos_apply','=',True)]}"/>
+								<field name="ventas_articulos_frecuency_type" attrs="{'invisible':[('ventas_articulos_apply','=',False)], 'required':[('ventas_articulos_apply','=',True)]}"/>
+								<field name="ventas_articulos_apply_on" attrs="{'invisible':[('ventas_articulos_apply','=',False)], 'required':[('ventas_articulos_apply','=',True)] }"/>
+								<field name="ventas_articulos_frecuency_number" attrs="{'readonly':[('ventas_articulos_frecuency_type','=', 'fixed')],'required':[('ventas_articulos_frecuency_type','=', 'variable')] ,'invisible':[('ventas_articulos_apply','=',False)], 'invisible':[('ventas_articulos_frecuency_type','=','fixed')]}"/>
+								<field name="ventas_articulos_start_date" attrs="{'readonly':[('ventas_articulos_frecuency_type','=', 'fixed')],'required':[('ventas_articulos_frecuency_type','=', 'variable')] ,'invisible':[('ventas_articulos_apply','=',False)], 'invisible':[('ventas_articulos_frecuency_type','=','fixed')]}"/>
+								<field name="ventas_articulos_end_date" attrs="{'readonly':[('ventas_articulos_frecuency_type','=', 'fixed')],'required':[('ventas_articulos_frecuency_type','=', 'variable')] ,'invisible':[('ventas_articulos_apply','=',False)], 'invisible':[('ventas_articulos_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+                            <group string="Descuentos Vacaciones">
+								<field name="desc_vacaciones_apply"/>
+								<field name="desc_vacaciones_discount_amount" attrs="{'invisible':[('desc_vacaciones_apply','=',False)], 'required':[('desc_vacaciones_apply','=',True)]}"/>
+								<field name="desc_vacaciones_frecuency_type" attrs="{'invisible':[('desc_vacaciones_apply','=',False)], 'required':[('desc_vacaciones_apply','=',True)]}"/>
+								<field name="desc_vacaciones_apply_on" attrs="{'invisible':[('desc_vacaciones_apply','=',False)], 'required':[('desc_vacaciones_apply','=',True)] }"/>
+								<field name="desc_vacaciones_frecuency_number" attrs="{'readonly':[('desc_vacaciones_frecuency_type','=', 'fixed')],'required':[('desc_vacaciones_frecuency_type','=', 'variable')] ,'invisible':[('desc_vacaciones_apply','=',False)], 'invisible':[('desc_vacaciones_frecuency_type','=','fixed')]}"/>
+								<field name="desc_vacaciones_start_date" attrs="{'readonly':[('desc_vacaciones_frecuency_type','=', 'fixed')],'required':[('desc_vacaciones_frecuency_type','=', 'variable')] ,'invisible':[('desc_vacaciones_apply','=',False)], 'invisible':[('desc_vacaciones_frecuency_type','=','fixed')]}"/>
+								<field name="desc_vacaciones_end_date" attrs="{'readonly':[('desc_vacaciones_frecuency_type','=', 'fixed')],'required':[('desc_vacaciones_frecuency_type','=', 'variable')] ,'invisible':[('desc_vacaciones_apply','=',False)], 'invisible':[('desc_vacaciones_frecuency_type','=','fixed')]}"/>
+							</group>
+
+
+                        </group>
+
+						<group string="Otros Ingresos" col="2">
+                            
+                            <group string="Ajuste de Salario (Ingreso)">
+								<field name="ajuste_salario_ing_apply"/>
+								<field name="ajuste_salario_ing_discount_amount" attrs="{'invisible':[('ajuste_salario_ing_apply','=',False)], 'required':[('ajuste_salario_ing_apply','=',True)]}"/>
+								<field name="ajuste_salario_ing_frecuency_type" attrs="{'invisible':[('ajuste_salario_ing_apply','=',False)], 'required':[('ajuste_salario_ing_apply','=',True)]}"/>
+								<field name="ajuste_salario_ing_apply_on" attrs="{'invisible':[('ajuste_salario_ing_apply','=',False)], 'required':[('ajuste_salario_ing_apply','=',True)] }"/>
+								<field name="ajuste_salario_ing_frecuency_number" attrs="{'readonly':[('ajuste_salario_ing_frecuency_type','=', 'fixed')],'required':[('ajuste_salario_ing_frecuency_type','=', 'variable')] ,'invisible':[('ajuste_salario_ing_apply','=',False)], 'invisible':[('ajuste_salario_ing_frecuency_type','=','fixed')]}"/>
+								<field name="ajuste_salario_ing_start_date" attrs="{'readonly':[('ajuste_salario_ing_frecuency_type','=', 'fixed')],'required':[('ajuste_salario_ing_frecuency_type','=', 'variable')] ,'invisible':[('ajuste_salario_ing_apply','=',False)], 'invisible':[('ajuste_salario_ing_frecuency_type','=','fixed')]}"/>
+								<field name="ajuste_salario_ing_end_date" attrs="{'readonly':[('ajuste_salario_ing_frecuency_type','=', 'fixed')],'required':[('ajuste_salario_ing_frecuency_type','=', 'variable')] ,'invisible':[('ajuste_salario_ing_apply','=',False)], 'invisible':[('ajuste_salario_ing_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+                            <group string="Bonificacion">
+								<field name="bonificacion_apply"/>
+								<field name="bonificacion_discount_amount" attrs="{'invisible':[('bonificacion_apply','=',False)], 'required':[('bonificacion_apply','=',True)]}"/>
+								<field name="bonificacion_frecuency_type" attrs="{'invisible':[('bonificacion_apply','=',False)], 'required':[('bonificacion_apply','=',True)]}"/>
+								<field name="bonificacion_apply_on" attrs="{'invisible':[('bonificacion_apply','=',False)], 'required':[('bonificacion_apply','=',True)] }"/>
+								<field name="bonificacion_frecuency_number" attrs="{'readonly':[('bonificacion_frecuency_type','=', 'fixed')],'required':[('bonificacion_frecuency_type','=', 'variable')] ,'invisible':[('bonificacion_apply','=',False)], 'invisible':[('bonificacion_frecuency_type','=','fixed')]}"/>
+								<field name="bonificacion_start_date" attrs="{'readonly':[('bonificacion_frecuency_type','=', 'fixed')],'required':[('bonificacion_frecuency_type','=', 'variable')] ,'invisible':[('bonificacion_apply','=',False)], 'invisible':[('bonificacion_frecuency_type','=','fixed')]}"/>
+								<field name="bonificacion_end_date" attrs="{'readonly':[('bonificacion_frecuency_type','=', 'fixed')],'required':[('bonificacion_frecuency_type','=', 'variable')] ,'invisible':[('bonificacion_apply','=',False)], 'invisible':[('bonificacion_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+                            <group string="Desccuento Por Error">
+								<field name="desc_por_error_apply"/>
+								<field name="desc_por_error_discount_amount" attrs="{'invisible':[('desc_por_error_apply','=',False)], 'required':[('desc_por_error_apply','=',True)]}"/>
+								<field name="desc_por_error_frecuency_type" attrs="{'invisible':[('desc_por_error_apply','=',False)], 'required':[('desc_por_error_apply','=',True)]}"/>
+								<field name="desc_por_error_apply_on" attrs="{'invisible':[('desc_por_error_apply','=',False)], 'required':[('desc_por_error_apply','=',True)] }"/>
+								<field name="desc_por_error_frecuency_number" attrs="{'readonly':[('desc_por_error_frecuency_type','=', 'fixed')],'required':[('desc_por_error_frecuency_type','=', 'variable')] ,'invisible':[('desc_por_error_apply','=',False)], 'invisible':[('desc_por_error_frecuency_type','=','fixed')]}"/>
+								<field name="desc_por_error_start_date" attrs="{'readonly':[('desc_por_error_frecuency_type','=', 'fixed')],'required':[('desc_por_error_frecuency_type','=', 'variable')] ,'invisible':[('desc_por_error_apply','=',False)], 'invisible':[('desc_por_error_frecuency_type','=','fixed')]}"/>
+								<field name="desc_por_error_end_date" attrs="{'readonly':[('desc_por_error_frecuency_type','=', 'fixed')],'required':[('desc_por_error_frecuency_type','=', 'variable')] ,'invisible':[('desc_por_error_apply','=',False)], 'invisible':[('desc_por_error_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+                            <group string="Dieta">
+								<field name="dieta_apply"/>
+								<field name="dieta_discount_amount" attrs="{'invisible':[('dieta_apply','=',False)], 'required':[('dieta_apply','=',True)]}"/>
+								<field name="dieta_frecuency_type" attrs="{'invisible':[('dieta_apply','=',False)], 'required':[('dieta_apply','=',True)]}"/>
+								<field name="dieta_apply_on" attrs="{'invisible':[('dieta_apply','=',False)], 'required':[('dieta_apply','=',True)] }"/>
+								<field name="dieta_frecuency_number" attrs="{'readonly':[('dieta_frecuency_type','=', 'fixed')],'required':[('dieta_frecuency_type','=', 'variable')] ,'invisible':[('dieta_apply','=',False)], 'invisible':[('dieta_frecuency_type','=','fixed')]}"/>
+								<field name="dieta_start_date" attrs="{'readonly':[('dieta_frecuency_type','=', 'fixed')],'required':[('dieta_frecuency_type','=', 'variable')] ,'invisible':[('dieta_apply','=',False)], 'invisible':[('dieta_frecuency_type','=','fixed')]}"/>
+								<field name="dieta_end_date" attrs="{'readonly':[('dieta_frecuency_type','=', 'fixed')],'required':[('dieta_frecuency_type','=', 'variable')] ,'invisible':[('dieta_apply','=',False)], 'invisible':[('dieta_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+                            <group string="Gratificacion Al Personal">
+								<field name="grat_personal_apply"/>
+								<field name="grat_personal_discount_amount" attrs="{'invisible':[('grat_personal_apply','=',False)], 'required':[('grat_personal_apply','=',True)]}"/>
+								<field name="grat_personal_frecuency_type" attrs="{'invisible':[('grat_personal_apply','=',False)], 'required':[('grat_personal_apply','=',True)]}"/>
+								<field name="grat_personal_apply_on" attrs="{'invisible':[('grat_personal_apply','=',False)], 'required':[('grat_personal_apply','=',True)] }"/>
+								<field name="grat_personal_frecuency_number" attrs="{'readonly':[('grat_personal_frecuency_type','=', 'fixed')],'required':[('grat_personal_frecuency_type','=', 'variable')] ,'invisible':[('grat_personal_apply','=',False)], 'invisible':[('grat_personal_frecuency_type','=','fixed')]}"/>
+								<field name="grat_personal_start_date" attrs="{'readonly':[('grat_personal_frecuency_type','=', 'fixed')],'required':[('grat_personal_frecuency_type','=', 'variable')] ,'invisible':[('grat_personal_apply','=',False)], 'invisible':[('grat_personal_frecuency_type','=','fixed')]}"/>
+								<field name="grat_personal_end_date" attrs="{'readonly':[('grat_personal_frecuency_type','=', 'fixed')],'required':[('grat_personal_frecuency_type','=', 'variable')] ,'invisible':[('grat_personal_apply','=',False)], 'invisible':[('grat_personal_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+                            <group string="Regalia Pascual">
+								<field name="regalia_pascual_apply"/>
+								<field name="regalia_pascual_discount_amount" attrs="{'invisible':[('regalia_pascual_apply','=',False)], 'required':[('regalia_pascual_apply','=',True)]}"/>
+								<field name="regalia_pascual_frecuency_type" attrs="{'invisible':[('regalia_pascual_apply','=',False)], 'required':[('regalia_pascual_apply','=',True)]}"/>
+								<field name="regalia_pascual_apply_on" attrs="{'invisible':[('regalia_pascual_apply','=',False)], 'required':[('regalia_pascual_apply','=',True)] }"/>
+								<field name="regalia_pascual_frecuency_number" attrs="{'readonly':[('regalia_pascual_frecuency_type','=', 'fixed')],'required':[('regalia_pascual_frecuency_type','=', 'variable')] ,'invisible':[('regalia_pascual_apply','=',False)], 'invisible':[('regalia_pascual_frecuency_type','=','fixed')]}"/>
+								<field name="regalia_pascual_start_date" attrs="{'readonly':[('regalia_pascual_frecuency_type','=', 'fixed')],'required':[('regalia_pascual_frecuency_type','=', 'variable')] ,'invisible':[('regalia_pascual_apply','=',False)], 'invisible':[('regalia_pascual_frecuency_type','=','fixed')]}"/>
+								<field name="regalia_pascual_end_date" attrs="{'readonly':[('regalia_pascual_frecuency_type','=', 'fixed')],'required':[('regalia_pascual_frecuency_type','=', 'variable')] ,'invisible':[('regalia_pascual_apply','=',False)], 'invisible':[('regalia_pascual_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+                            <group string="Retroactivo Salario">
+								<field name="retro_salario_apply"/>
+								<field name="retro_salario_discount_amount" attrs="{'invisible':[('retro_salario_apply','=',False)], 'required':[('retro_salario_apply','=',True)]}"/>
+								<field name="retro_salario_frecuency_type" attrs="{'invisible':[('retro_salario_apply','=',False)], 'required':[('retro_salario_apply','=',True)]}"/>
+								<field name="retro_salario_apply_on" attrs="{'invisible':[('retro_salario_apply','=',False)], 'required':[('retro_salario_apply','=',True)] }"/>
+								<field name="retro_salario_frecuency_number" attrs="{'readonly':[('retro_salario_frecuency_type','=', 'fixed')],'required':[('retro_salario_frecuency_type','=', 'variable')] ,'invisible':[('retro_salario_apply','=',False)], 'invisible':[('retro_salario_frecuency_type','=','fixed')]}"/>
+								<field name="retro_salario_start_date" attrs="{'readonly':[('retro_salario_frecuency_type','=', 'fixed')],'required':[('retro_salario_frecuency_type','=', 'variable')] ,'invisible':[('retro_salario_apply','=',False)], 'invisible':[('retro_salario_frecuency_type','=','fixed')]}"/>
+								<field name="retro_salario_end_date" attrs="{'readonly':[('retro_salario_frecuency_type','=', 'fixed')],'required':[('retro_salario_frecuency_type','=', 'variable')] ,'invisible':[('retro_salario_apply','=',False)], 'invisible':[('retro_salario_frecuency_type','=','fixed')]}"/>
+							</group>
+
+                            <group string="Vacaciones">
+								<field name="vacaciones_apply"/>
+								<field name="vacaciones_discount_amount" attrs="{'invisible':[('vacaciones_apply','=',False)], 'required':[('vacaciones_apply','=',True)]}"/>
+								<field name="vacaciones_frecuency_type" attrs="{'invisible':[('vacaciones_apply','=',False)], 'required':[('vacaciones_apply','=',True)]}"/>
+								<field name="vacaciones_apply_on" attrs="{'invisible':[('vacaciones_apply','=',False)], 'required':[('vacaciones_apply','=',True)] }"/>
+								<field name="vacaciones_frecuency_number" attrs="{'readonly':[('vacaciones_frecuency_type','=', 'fixed')],'required':[('vacaciones_frecuency_type','=', 'variable')] ,'invisible':[('vacaciones_apply','=',False)], 'invisible':[('vacaciones_frecuency_type','=','fixed')]}"/>
+								<field name="vacaciones_start_date" attrs="{'readonly':[('vacaciones_frecuency_type','=', 'fixed')],'required':[('vacaciones_frecuency_type','=', 'variable')] ,'invisible':[('vacaciones_apply','=',False)], 'invisible':[('vacaciones_frecuency_type','=','fixed')]}"/>
+								<field name="vacaciones_end_date" attrs="{'readonly':[('vacaciones_frecuency_type','=', 'fixed')],'required':[('vacaciones_frecuency_type','=', 'variable')] ,'invisible':[('vacaciones_apply','=',False)], 'invisible':[('vacaciones_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+                            <group string="Preaviso">
+								<field name="preaviso_apply"/>
+								<field name="preaviso_discount_amount" attrs="{'invisible':[('preaviso_apply','=',False)], 'required':[('preaviso_apply','=',True)]}"/>
+								<field name="preaviso_frecuency_type" attrs="{'invisible':[('preaviso_apply','=',False)], 'required':[('preaviso_apply','=',True)]}"/>
+								<field name="preaviso_apply_on" attrs="{'invisible':[('preaviso_apply','=',False)], 'required':[('preaviso_apply','=',True)] }"/>
+								<field name="preaviso_frecuency_number" attrs="{'readonly':[('preaviso_frecuency_type','=', 'fixed')],'required':[('preaviso_frecuency_type','=', 'variable')] ,'invisible':[('preaviso_apply','=',False)], 'invisible':[('preaviso_frecuency_type','=','fixed')]}"/>
+								<field name="preaviso_start_date" attrs="{'readonly':[('preaviso_frecuency_type','=', 'fixed')],'required':[('preaviso_frecuency_type','=', 'variable')] ,'invisible':[('preaviso_apply','=',False)], 'invisible':[('preaviso_frecuency_type','=','fixed')]}"/>
+								<field name="preaviso_end_date" attrs="{'readonly':[('preaviso_frecuency_type','=', 'fixed')],'required':[('preaviso_frecuency_type','=', 'variable')] ,'invisible':[('preaviso_apply','=',False)], 'invisible':[('preaviso_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+                            <group string="Cesantia">
+								<field name="cesantia_apply"/>
+								<field name="cesantia_discount_amount" attrs="{'invisible':[('cesantia_apply','=',False)], 'required':[('cesantia_apply','=',True)]}"/>
+								<field name="cesantia_frecuency_type" attrs="{'invisible':[('cesantia_apply','=',False)], 'required':[('cesantia_apply','=',True)]}"/>
+								<field name="cesantia_apply_on" attrs="{'invisible':[('cesantia_apply','=',False)], 'required':[('cesantia_apply','=',True)] }"/>
+								<field name="cesantia_frecuency_number" attrs="{'readonly':[('cesantia_frecuency_type','=', 'fixed')],'required':[('cesantia_frecuency_type','=', 'variable')] ,'invisible':[('cesantia_apply','=',False)], 'invisible':[('cesantia_frecuency_type','=','fixed')]}"/>
+								<field name="cesantia_start_date" attrs="{'readonly':[('cesantia_frecuency_type','=', 'fixed')],'required':[('cesantia_frecuency_type','=', 'variable')] ,'invisible':[('cesantia_apply','=',False)], 'invisible':[('cesantia_frecuency_type','=','fixed')]}"/>
+								<field name="cesantia_end_date" attrs="{'readonly':[('cesantia_frecuency_type','=', 'fixed')],'required':[('cesantia_frecuency_type','=', 'variable')] ,'invisible':[('cesantia_apply','=',False)], 'invisible':[('cesantia_frecuency_type','=','fixed')]}"/>
+							</group>
+                            
+						</group>
+				    </page>
+
+				  </xpath>
+			    </data>
+            </field>
+		</record>
+
+
+    </data>
+</openerp>
+

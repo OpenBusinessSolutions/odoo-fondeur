@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <menuitem id="sale_pricelist_items_mi" name="Pricelist Items"
+            action="product_pricelist_rules.pricelist_items_action"
+            sequence="5" parent="product.menu_product_pricelist_main"
+            groups="product.group_sale_pricelist" />
+
+        <menuitem id="sale_pricelist_item_offers_mi"
+            action="product_pricelist_rules.pricelist_item_offers_action"
+            name="Pricelist Item Offers" sequence="6"
+            parent="product.menu_product_pricelist_main" groups="product.group_sale_pricelist" />
+
+    </data>
+</openerp>

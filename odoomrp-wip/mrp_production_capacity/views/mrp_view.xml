@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="mrp_workcenter_view_inh_prodcapacity">
+            <field name="name">mrp.workcenter.view.inh.prodcapacity</field>
+            <field name="model">mrp.workcenter</field>
+            <field name="inherit_id" ref="mrp.mrp_workcenter_view" />
+            <field name="arch" type="xml">
+                <field name="capacity_per_cycle" position="before">
+                    <field name="capacity_per_cycle_min" />
+                </field>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="mrp_routing_workcenter_tree_view_inh_prodcapacity">
+            <field name="name">mrp.routing.workcenter.tree.view.inh.prodcapacity</field>
+            <field name="model">mrp.routing.workcenter</field>
+            <field name="inherit_id" ref="mrp.mrp_routing_workcenter_tree_view" />
+            <field name="arch" type="xml">
+                <field name="hour_nbr" position="after">
+                    <field name="limited_production_capacity" />
+                </field>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="mrp_routing_workcenter_form_view_inh_prodcapacity">
+            <field name="name">mrp.routing.workcenter.form.view.inh.prodcapacity</field>
+            <field name="model">mrp.routing.workcenter</field>
+            <field name="inherit_id" ref="mrp.mrp_routing_workcenter_form_view" />
+            <field name="arch" type="xml">
+                <field name="workcenter_id" position="after">
+                    <field name="limited_production_capacity" />
+                </field>
+            </field>
+        </record>
+        <record id="mrp_production_form_view_inh_prodcapacity" model="ir.ui.view">
+            <field name="name">mrp.production.form.view.inh.prodcapacity</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+            <field name="arch" type="xml">
+                <field name="product_qty" position="attributes">
+                    <attribute name="on_change" />
+                </field>
+                <field name="product_qty" position="after">
+                    <field name="show_split_button" invisible="1" />
+                    <field name="capacity_min" invisible="1" />
+                    <field name="capacity_max" invisible="1" />
+                    <button name="button_split_quantity" string="Split quantity" type="object"
+                            attrs="{'invisible':[('show_split_button','=',False)]}"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

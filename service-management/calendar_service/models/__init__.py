@@ -1,0 +1,3 @@
+import calendar_service
+import res_partner
+import sale

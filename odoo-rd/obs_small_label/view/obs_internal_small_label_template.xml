@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="obs_internal_small_label_template">
+            <span t-as="f" t-foreach="get_barcode_data(doc_ids)">
+                <div class="page">
+                    <div style="margin-top:20px;margin-left:10px;">
+                        <div style="color:black;font-size:19px;font-weight: bold;">
+                            <span t-esc="f['default_code']"/>
+                        </div>
+                    </div>
+                    <div style="margin-top:20px;margin-left:10px;margin-bottom:10px;">
+                        <div style="color:black;font-size:19px;font-weight: bold;">
+                            <span t-esc="f['name']"/>
+                        </div>
+                    </div>
+                    <div align="center" style="margin-top:30px;">
+                        <span t-raw="f['ean13']"/>
+                    </div>
+               </div>
+            </span>
+        </template>
+    </data>
+</openerp>

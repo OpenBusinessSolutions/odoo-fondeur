@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_employee_form_inherit1" model="ir.ui.view">
+            <field name="name">HR Employee Form - Inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <field name="identification_id" position="after">
+                    <field name="id_copy" filename="id_copy_fname"/>
+                    <field name="driving_licence"/>                    
+                </field>                       
+                <field name="bank_account_id" position="after">
+                    <field name="sort_code"/>
+                    <field name="nin"/>
+                </field>               
+                <field name="address_home_id" position="after">
+                    <field name="address_lt_id"
+                        domain="[('country_id.code', '=', 'LT')]"
+                    />
+                    <field name="phone_lt"/>
+                    <field name="address_uk_id"
+                        domain="[('country_id.code', '=', 'GB')]"
+                        />
+                </field> 
+                <!-- TODO why on_change attribute do not add 
+                <field name="bank_account_id" position="attributes">             
+                    <attribute name="onchange">onchange_bank_account_id()</attribute>                                    
+                </field>   
+                -->              
+                <field name="address_home_id" position="attributes">
+                    <attribute name="groups">hr_dc_extend.group_hr_features</attribute>
+                </field>
+                <group string="Birth" position="after">
+                    <group string="Emergency">
+                        <field name="relatives"/>
+                        <field name="relative_name"/>
+                        <field name="contact_info"/>
+                    </group>
+                </group>                                              
+            </field>
+        </record>     
+    </data>
+</openerp>        
