@@ -32,3 +32,4 @@ class InheritedAccountJournal(models.Model):
         help=u"Seleccione el formato que corresponde al papel de verificación va a imprimir sus cheques en.\n"
              u"Para desactivar la función de impresión, seleccione 'Ninguno'.")
 
+

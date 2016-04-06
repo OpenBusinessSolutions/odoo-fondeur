@@ -146,7 +146,7 @@ class payroll_analysis(orm.TransientModel):
 
         if wizard.payslip_run_ids and wizard.type == 'payslip_run':
             domain_filters.append(('payslip_run_id', 'in', [
-                payslip_run_id.id for rule in wizard.payslip_run_ids]))
+                payslip_run_id.id for payslip_run_id in wizard.payslip_run_ids]))
 
         if wizard.employee_ids and wizard.type == 'employee':
             domain_filters.append(('employee_id', 'in', [

@@ -186,3 +186,6 @@ exit
 ./odoo/odoo.py -c /etc/odoo-server.conf 
 d
 exit
+cd /opt/odoo-test/
+./odoo/odoo.py -c /etc/odoo-test-server.conf 
+exit

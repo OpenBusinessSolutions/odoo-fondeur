@@ -21,6 +21,13 @@
                         <field name="amount_left"/>
                         <field name="amount_letter_top"/>
                         <field name="amount_letter_left"/>
+                        <field name="concept_top"/>
+                        <field name="concept_left"/>
+                        <field name="debit_top"/>
+                        <field name="debit_left"/>
+                        <field name="anc_concepto"/>
+                        <field name="anc_debito"/>
+                        <field name="anc_credito"/>
                     </group>
                     <group string="Cabecera">
                         <field name="check_header_top"/>

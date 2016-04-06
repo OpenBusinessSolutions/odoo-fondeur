@@ -44,8 +44,20 @@ class CheckReportConfig(models.Model):
     amount_letter_top = fields.Float(string="Margen superior monto en letras")
     amount_letter_left = fields.Float(string="Margen izquierdo monto en letras")
 
+    # Par el concepto
+    concept_top = fields.Float(string="Margen superior del concepto",)
+    concept_left = fields.Float(string="Margen izquierdo del concepto")
+
+    # Para el debito
+    debit_top = fields.Float(string="Margen superior del debito",)
+    debit_left = fields.Float(string="Margen izquierdo del debito")
+
     check_header_top = fields.Float("Margen superior de la Cabecera")
     check_header = fields.Html("Cabecera del cheque")
 
     check_footer_top = fields.Float("Margen superior del pie")
     check_footer = fields.Html("Pie del cheque")
+
+    anc_concepto = fields.Float(string="Anchura campo Concepto", )
+    anc_debito = fields.Float(string="Anchura campo Debito", )
+    anc_credito = fields.Float(string="Anchura campo Credito", )
