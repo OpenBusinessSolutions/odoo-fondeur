@@ -117,14 +117,14 @@ function marcos_pos_screens(instance, module) {
                     if (error === 'error-no-client') {
                         self.pos_widget.screen_selector.set_current_screen("clientlist");
                         self.pos_widget.screen_selector.show_popup('error', {
-                           message: _t('An anonymous order cannot be invoiced'),
-                           comment: _t('Please select a client for this order. This can be done by clicking the order tab')
+                            message: _t('An anonymous order cannot be invoiced'),
+                            comment: _t('Please select a client for this order. This can be done by clicking the order tab')
                         });
                     } else {
                         self.pos_widget.screen_selector.set_current_screen("clientlist");
                         self.pos_widget.screen_selector.show_popup('error', {
-                           message: _t('The order could not be sent'),
-                           comment: _t('Check your internet connection and try again.')
+                            message: _t('The order could not be sent'),
+                            comment: _t('Check your internet connection and try again.')
                         });
                     }
                     self.pos_widget.action_bar.set_button_disabled('validation', false);
@@ -246,18 +246,23 @@ function marcos_pos_screens(instance, module) {
             var self = this;
             var currentOrder = this.pos.get('selectedOrder');
             var paymentLines = currentOrder.get("paymentLines");
-            var defaul_client = self.pos.db.get_partner_by_id(self.pos.config.default_partner_id[0]);
+            var defaul_client = self.pos.db.get_partner_by_id(self.pos.config.default_partner_id[0]) || false;
             var client = currentOrder.has("client") ? currentOrder.get("client") : defaul_client;
-            if (client && client.id === defaul_client.id) {
-                self.pos_widget.screen_selector.show_popup(
-                    'marcos_input_popup_widget', {
-                        message: "Digité el NCF de la nota de crédito.",
-                        confirm: function () {
-                            self.load_credit_note(this.$("#ref_name").val());
-                        }
 
-                    });
-            } else if (client) {
+            if (defaul_client) {
+                if (client && client.id === defaul_client.id) {
+                    self.pos_widget.screen_selector.show_popup(
+                        'marcos_input_popup_widget', {
+                            message: "Digité el NCF de la nota de crédito.",
+                            confirm: function () {
+                                self.load_credit_note(this.$("#ref_name").val());
+                            }
+
+                        });
+                }
+
+            }
+            else if (client) {
                 var client_id = currentOrder.get_client();
                 self.load_credit_note(client_id.id);
             } else {
@@ -410,16 +415,16 @@ function marcos_pos_screens(instance, module) {
         // what happens when we save the changes on the client edit form -> we fetch the fields, sanitize them,
         // send them to the backend for update, and call saved_client_details() when the server tells us the
         // save was successfull.
-        save_client_details: function(partner) {
+        save_client_details: function (partner) {
             var self = this;
 
             var fields = {}
-            this.$('.client-details-contents .detail').each(function(idx,el){
+            this.$('.client-details-contents .detail').each(function (idx, el) {
                 fields[el.name] = el.value;
             });
 
             if (!fields.name) {
-                this.pos_widget.screen_selector.show_popup('error',{
+                this.pos_widget.screen_selector.show_popup('error', {
                     message: _t('A Customer Name Is Required'),
                 });
                 return;
@@ -429,13 +434,13 @@ function marcos_pos_screens(instance, module) {
                 fields.image = this.uploaded_picture;
             }
 
-            fields.id           = partner.id || false;
-            fields.country_id   = fields.country_id || false;
-            fields.ean13        = fields.ean13 ? this.pos.barcode_reader.sanitize_ean(fields.ean13) : false;
+            fields.id = partner.id || false;
+            fields.country_id = fields.country_id || false;
+            fields.ean13 = fields.ean13 ? this.pos.barcode_reader.sanitize_ean(fields.ean13) : false;
 
-            new instance.web.Model('res.partner').call('create_from_ui',[fields]).then(function(partner_id){
+            new instance.web.Model('res.partner').call('create_from_ui', [fields]).then(function (partner_id) {
                 self.saved_client_details(partner_id);
-            },function(err,event){
+            }, function (err, event) {
                 event.preventDefault();
                 err_type = err.data.name || false;
                 if (err_type === "openerp.exceptions.ValidationError") {
@@ -443,8 +448,8 @@ function marcos_pos_screens(instance, module) {
                 } else {
                     err_msg = _t('Your Internet connection is probably down.')
                 }
-                self.pos_widget.screen_selector.show_popup('error',{
-                    'message':_t('Error: Could not Save Changes'),
+                self.pos_widget.screen_selector.show_popup('error', {
+                    'message': _t('Error: Could not Save Changes'),
                     'comment': err_msg,
                 });
             });
@@ -453,14 +458,14 @@ function marcos_pos_screens(instance, module) {
 
     module.ReceiptScreenWidget = module.ReceiptScreenWidget.extend({
 
-            refresh: function() {
+        refresh: function () {
             var order = this.pos.get('selectedOrder');
-            $('.pos-receipt-container', this.$el).html(QWeb.render('PosTicket',{
-                    widget:this,
-                    order: order,
-                    orderlines: order.get('orderLines').models,
-                    paymentlines: order.get('paymentLines').models,
-                }));
+            $('.pos-receipt-container', this.$el).html(QWeb.render('PosTicket', {
+                widget: this,
+                order: order,
+                orderlines: order.get('orderLines').models,
+                paymentlines: order.get('paymentLines').models,
+            }));
         }
     });
 

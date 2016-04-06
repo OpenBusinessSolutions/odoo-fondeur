@@ -184,7 +184,7 @@
                 </div>
                 <br/>
             </t>
-            <table class="tg">
+            <table>
                 <colgroup>
                     <col width='50%'/>
                     <col width='25%'/>
@@ -205,6 +205,11 @@
                             <div class="pos-disc-font">
                                 With a<t t-esc="orderline.get_discount()"/>% discount
                             </div>
+                        </t>
+                        <t t-if="orderline.get_serial() > 0">
+		                        <div class="pos-disc-font">
+		                            Serial No: <t t-esc="orderline.get_serial()"/>
+		                        </div>
                         </t>
                     </td>
                     <td class="pos-right-align">
@@ -239,10 +244,10 @@
                         </td>
                     </tr>
                 </t>
-                <tr class="emph">
-                    <td>Total:</td>
+                <tr>
+                    <strong><td>Total:</td></strong>
                     <td class="pos-right-align">
-                        <t t-esc="widget.format_currency(order.getTotalTaxIncluded())"/>
+                        <strong><t t-esc="widget.format_currency(order.getTotalTaxIncluded())"/></strong>
                     </td>
                 </tr>
             </table>

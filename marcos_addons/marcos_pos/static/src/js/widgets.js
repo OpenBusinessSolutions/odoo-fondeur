@@ -66,7 +66,6 @@ function marcos_pos_widgets(instance, module) {
         },
         change_user: function () {
             var self = this;
-            console.log(self);
             if (self.pos.manager) {
                 _.each(self.pos.users, function (user) {
                     if (user.id === self.pos.user_before_manager) {
@@ -195,6 +194,8 @@ function marcos_pos_widgets(instance, module) {
                                         } else if (action === "refund") {
                                             product.qty_available = res.qty - res.return_qty;
                                             product.origin_id = res.id;
+                                            product.refund_price = res.price_unit;
+                                            product.refund_discount = res.discount;
                                         }
 
                                         products.push(product);
