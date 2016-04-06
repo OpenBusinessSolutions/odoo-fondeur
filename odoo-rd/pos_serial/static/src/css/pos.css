@@ -1,0 +1,1058 @@
+.selection-area {
+    height: 32px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#7B7979), to(#393939));
+    background: -moz-linear-gradient(#7B7979, #393939);
+    background:  -ms-linear-gradient(#7B7979, #393939);
+    background:      linear-gradient(#7B7979, #393939);
+}
+.ui-dialog, .modal-dialog {
+    background: white;
+    padding: 0px;
+    border-radius: 3px;
+    font-family: sans-serif;
+    box-shadow: 0px 10px 40px rgba(0,0,0,0.4);
+    position: absolute;
+    top: 30px;
+    height: auto !important;
+    overflow: auto !important;
+}
+
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: -moz-max-content !important;
+    margin: 30px auto;
+  }
+  .modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+  }
+  .modal-sm {
+    width: 300px;
+  }
+}
+
+.pos .searchbox input {
+    width: 175px;
+    border: 1px solid #cecbcb;
+    padding: 10px 20px;
+    padding-left: 38px;
+    margin: 6px;
+    background: url("../img/search.png") no-repeat 15px;
+    background-color: white;
+    border-radius: 20px;
+    font-family: Lato;
+    font-size: 13px;
+}
+
+.pos .breadcrumb {
+    display: inline-block !important;
+    float: left !important;
+    height: 48px !important;
+    line-height: 48px !important;
+    min-width: 48px !important;
+    background-color: #d3d3d3;
+    padding: 0px !important;
+}
+
+/* ABOVE CSS IS FOR RETURN */
+
+/* bootstrap */
+
+.breadcrumb {
+  padding: 0px !important;
+  margin-bottom: 20px;
+  list-style: none;
+  background-color: #C7C7C7 !important;
+  border-radius: 4px;
+}
+.modal-open {
+  overflow: hidden;
+}
+.modal {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+.modal.fade .modal-dialog {
+  -webkit-transition: -webkit-transform .3s ease-out;
+       -o-transition:      -o-transform .3s ease-out;
+          transition:         transform .3s ease-out;
+  -webkit-transform: translate3d(0, -25%, 0);
+       -o-transform: translate3d(0, -25%, 0);
+          transform: translate3d(0, -25%, 0);
+}
+.modal.in .modal-dialog {
+  -webkit-transform: translate3d(0, 0, 0);
+       -o-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 3px !important;
+  outline: 0;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+          box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000;
+}
+.modal-backdrop.fade {
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+.modal-backdrop.in {
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+.modal-header {
+  min-height: 16.42857143px;
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.modal-header .close {
+  margin-top: -2px;
+}
+.modal-title {
+  margin: 0;
+  line-height: 1.42857143;
+}
+.modal-body {
+  position: relative;
+  padding: 15px;
+}
+.modal-footer {
+  padding: 15px;
+  text-align: right;
+  border-top: 1px solid #e5e5e5;
+}
+.modal-footer .btn + .btn {
+  margin-bottom: 0;
+  margin-left: 5px;
+}
+.modal-footer .btn-group .btn + .btn {
+  margin-left: -1px;
+}
+.modal-footer .btn-block + .btn-block {
+  margin-left: 0;
+}
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+
+@media (min-width: 992px) {
+  .modal-lg {
+    width: 900px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 600px;
+    margin: 0px auto !important;
+  }
+  .modal-content {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+  }
+  .modal-sm {
+    width: 300px;
+  }
+}
+
+.point-of-sale .ui-dialog, .modal-dialog {
+    background: white;
+    padding: 0px;
+    border-radius: 3px;
+    font-family: sans-serif;
+    box-shadow: 0px 10px 40px rgba(0,0,0,0.4);
+    position: absolute;
+    height: 400px;
+    overflow: scroll;
+}
+
+/* LIST VIEW */
+
+.openerp .oe_form_field_one2many .oe_list_buttons.oe_editing .oe_list_save, .openerp .oe_form_field_many2many .oe_list_buttons.oe_editing .oe_list_save {
+  visibility: hidden;
+}
+.openerp .oe_form_editable .oe_list_editable .oe_list_content td.oe_required {
+  background-color: #d2d2ff;
+}
+.openerp .oe_form_editable .oe_list_editable .oe_list_content td.oe_readonly {
+  background-color: #eeeeee;
+}
+.openerp .oe_list_editable .oe_list_content td.oe_list_field_cell {
+  padding: 4px 6px 3px;
+}
+.openerp .oe_list.oe_list_editable.oe_editing .oe_edition .oe_list_field_cell {
+  color: transparent;
+  text-shadow: none;
+}
+.openerp .oe_list.oe_list_editable.oe_editing .oe_edition .oe_list_field_cell * {
+  visibility: hidden;
+}
+.openerp .oe_list.oe_list_editable.oe_editing .oe_m2o_drop_down_button {
+  top: 5px;
+}
+.openerp .oe_list.oe_list_editable.oe_editing .oe_m2o_cm_button {
+  line-height: 19px;
+}
+.openerp .oe_list.oe_list_editable.oe_editing .oe_input_icon {
+  margin-top: 5px;
+}
+.openerp .oe_list.oe_list_editable.oe_editing .oe_form_field {
+  min-width: 0;
+  max-width: none;
+}
+.openerp .oe_list.oe_list_editable.oe_editing .oe_form_field.oe_list_field_handle {
+  color: transparent;
+}
+.openerp .oe_list.oe_list_editable.oe_editing .oe_form_field.oe_readonly {
+  padding: 4px 6px 3px;
+  text-align: left;
+}
+.openerp .oe_list.oe_list_editable.oe_editing .oe_form_field input, .openerp .oe_list.oe_list_editable.oe_editing .oe_form_field textarea {
+  height: 27px;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border: 1px solid #aaaaff;
+  margin: 0;
+}
+.openerp .oe_list.oe_list_editable.oe_editing .oe_form_field input, .openerp .oe_list.oe_list_editable.oe_editing .oe_form_field textarea, .openerp .oe_list.oe_list_editable.oe_editing .oe_form_field select {
+  min-width: 0;
+}
+.openerp .oe_list.oe_list_editable.oe_editing .oe_form_field.oe_form_field_float.oe_readonly, .openerp .oe_list.oe_list_editable.oe_editing .oe_form_field.oe_form_view_integer.oe_readonly {
+  padding: 6px 0px 0px;
+  text-align: right;
+  max-width: 100px;
+}
+.openerp .oe_list.oe_list_editable.oe_editing .oe_form_field.oe_form_field_float input, .openerp .oe_list.oe_list_editable.oe_editing .oe_form_field.oe_form_view_integer input {
+  width: 100% !important;
+  text-align: right;
+}
+.openerp .oe_list.oe_list_editable.oe_editing .oe_form_field.oe_form_field_datetime input.oe_datepicker_master, .openerp .oe_list.oe_list_editable.oe_editing .oe_form_field.oe_form_field_date input.oe_datepicker_master {
+  width: 100% !important;
+}
+.openerp .oe_list.oe_list_editable.oe_editing .oe_form_field.oe_form_field_reference {
+  display: table;
+}
+.openerp .oe_list_group_name {
+  white-space: nowrap;
+}
+.openerp .oe_form .oe_form_field_many2many > .oe_list .oe_list_pager_single_page {
+  display: none;
+}
+.openerp .oe_list_buttons .oe_alternative {
+  visibility: hidden;
+}
+.openerp .oe_list_buttons .oe_list_save, .openerp .oe_list_buttons .oe_list_discard {
+  display: none;
+}
+.openerp .oe_list_buttons.oe_editing .oe_list_add {
+  display: none;
+}
+.openerp .oe_list_buttons.oe_editing .oe_list_save {
+  display: inline-block;
+}
+.openerp .oe_list_buttons.oe_editing .oe_list_discard {
+  display: inline;
+}
+.openerp .oe_list_buttons.oe_editing .oe_alternative {
+  visibility: visible;
+}
+.openerp .oe_list.oe_cannot_edit .oe_list_header_handle, .openerp .oe_list.oe_cannot_edit .oe_list_field_handle {
+  display: none !important;
+  padding: 0 !important;
+}
+.openerp .oe_list.oe_cannot_delete .oe_list_record_delete {
+  display: none !important;
+}
+.openerp .oe_list .oe_form .oe_form_nosheet {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.openerp .oe_list .oe_form .oe_form_field {
+  width: auto;
+  position: absolute;
+  margin: 0 !important;
+  padding: 0;
+}
+.openerp .oe_list .oe_form .oe_form_field_boolean input {
+  margin: 1px 0 0 10px !important;
+}
+.openerp .oe_list .oe_list_content .oe_group_header {
+  background-color: #ededed;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#dedede));
+  background-image: -webkit-linear-gradient(top, #fcfcfc, #dedede);
+  background-image: -moz-linear-gradient(top, #fcfcfc, #dedede);
+  background-image: -ms-linear-gradient(top, #fcfcfc, #dedede);
+  background-image: -o-linear-gradient(top, #fcfcfc, #dedede);
+  background-image: linear-gradient(to bottom, #fcfcfc, #dedede);
+}
+.openerp .oe_list_content {
+  width: 100%;
+}
+.openerp .oe_list_content td:first-child:after, .openerp .oe_list_content th:first-child:after {
+  border-width: 0;
+}
+.openerp .oe_list_content td.oe_number {
+  text-align: right !important;
+  max-width: 100px;
+}
+.openerp .oe_list_content td.oe_list_field_date, .openerp .oe_list_content th.oe_list_header_date {
+  min-width: 6em;
+}
+.openerp .oe_list_content > thead {
+  border-bottom: 2px solid #cacaca;
+  background: #eeeeee;
+  vertical-align: top;
+}
+.openerp .oe_list_content td, .openerp .oe_list_content th {
+  padding: 3px 6px;
+  line-height: 18px;
+}
+.openerp .oe_list_content th.oe_sortable, .openerp .oe_list_content th.oe_sortable div {
+  cursor: pointer;
+}
+.openerp .oe_list_content th.oe_sortable div {
+  position: relative;
+}
+.openerp .oe_list_content th.oe_sortable div:after {
+  margin-right: 6px;
+  content: "";
+  margin-top: 7px;
+  border-width: 0 4px 4px;
+  border-style: solid;
+  border-color: black transparent;
+  visibility: hidden;
+}
+.openerp .oe_list_content th.sortup div:after {
+  float: right;
+  visibility: visible;
+  filter: alpha(opacity=60);
+  opacity: 0.6;
+}
+.openerp .oe_list_content .oe_list_header_many2many_tags {
+  min-width: 70px;
+}
+.openerp .oe_list_content th.sortdown div:after {
+  float: right;
+  border-bottom: none;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid black;
+  visibility: visible;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  filter: alpha(opacity=60);
+  opacity: 0.6;
+}
+.openerp .oe_list_content > tbody {
+  cursor: pointer;
+}
+.openerp .oe_list_content > tbody > tr {
+  height: 27px;
+  border-top: 1px solid #dddddd;
+}
+.openerp .oe_list_content > tbody > tr > td.oe_list_field_cell {
+  padding: 3px 6px;
+  white-space: pre-line;
+}
+.openerp .oe_list_content > tbody > tr > td > button, .openerp .oe_list_content > tbody > tr > th > button {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+.openerp .oe_list_content > tbody > tr > td > button.btn_txt, .openerp .oe_list_content > tbody > tr > th > button.btn_txt {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background: #e3e3e3;
+  padding: 3px 12px;
+}
+.openerp .oe_list_content > tbody > tr > td.oe_list_checkbox:first-child, .openerp .oe_list_content > tbody > tr th.oe_list_checkbox:first-child {
+  width: 17px;
+}
+.openerp .oe_list_content > tbody > tr > td.oe_list_checkbox:first-child:after, .openerp .oe_list_content > tbody > tr th.oe_list_checkbox:first-child:after {
+  border-width: 0;
+}
+.openerp .oe_list_content > tbody > tr > td.oe_list_field_boolean input {
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+.openerp .oe_list_content > tbody > tr:nth-child(odd) {
+  background-color: #f0f0fa;
+  background-color: #efeff8;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f0f0fa), to(#eeeef6));
+  background-image: -webkit-linear-gradient(top, #f0f0fa, #eeeef6);
+  background-image: -moz-linear-gradient(top, #f0f0fa, #eeeef6);
+  background-image: -ms-linear-gradient(top, #f0f0fa, #eeeef6);
+  background-image: -o-linear-gradient(top, #f0f0fa, #eeeef6);
+  background-image: linear-gradient(to bottom, #f0f0fa, #eeeef6);
+}
+.openerp .oe_list_content > tfoot {
+  border-top: 2px solid #cacaca;
+  border-bottom: 1px solid #cacaca;
+  background: #eeeeee;
+  font-weight: bold;
+}
+.openerp .oe_list_content .numeric {
+  text-align: right;
+  width: 82px;
+}
+.openerp .oe_list_content .numeric input {
+  text-align: right;
+}
+.openerp .oe_list_content th.oe_list_header_handle {
+  font-size: 1px;
+  overflow: hidden;
+  text-indent: -9001px;
+}
+.openerp .oe_list_content td.oe_list_field_handle {
+  width: 1em;
+  padding: 0 !important;
+  cursor: ns-resize;
+}
+.openerp .oe_list_content td.oe_list_field_handle .oe_list_handle {
+  font-size: 1px;
+  letter-spacing: -1px;
+  color: transparent;
+  text-shadow: none;
+  font-weight: normal;
+  margin-right: 7px;
+}
+.openerp .oe_list_content td.oe_list_field_handle .oe_list_handle:before {
+  font: 18px "entypoRegular";
+  content: "}";
+  color: #e0e0e0;
+}
+.openerp .oe_list_content .oe_list_field_progressbar progress {
+  width: 100%;
+}
+
+.openerp .oe_popup_list_pager {
+  float: right;
+}
+
+/* list */
+
+.openerp .oe_list_pager {
+  line-height: 26px;
+}
+.openerp .oe_pager_value {
+  float: left;
+  margin-right: 8px;
+}
+.openerp ul.oe_pager_group {
+  padding: 0;
+  margin: 0;
+}
+.openerp .oe_pager_group {
+  float: left;
+  height: 24px;
+  line-height: 24px;
+  display: inline-block;
+  border: 1px solid #ababab;
+  cursor: pointer;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.openerp .oe_pager_group li {
+  height: 24px;
+  line-height: 24px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  float: left;
+  border-right: 1px solid #ababab;
+}
+.openerp .oe_pager_group li:last-child {
+  border: none;
+}
+.openerp .oe_pager_group a {
+  color: #4c4c4c;
+  padding: 0 8px;
+}
+.openerp .oe_pager_group a:hover {
+  text-decoration: none;
+}
+.openerp .oe_pager_group .active {
+  background: #999999;
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3) inset;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3) inset;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3) inset;
+}
+.openerp .oe_pager_group .active a {
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+.openerp .oe_list_pager.oe_list_pager_single_page .oe_pager_group {
+  display: none;
+}
+
+/* SEARCH VIEW */
+
+.openerp .oe_searchview {
+  cursor: text;
+  position: relative;
+  float: right;
+  padding: 1px 0;
+  line-height: 18px;
+  min-width: 400px;
+  border: 1px solid #ababab;
+  background: white;
+  -moz-border-radius: 13px;
+  -webkit-border-radius: 13px;
+  border-radius: 13px;
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) inset;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) inset;
+}
+.openerp .oe_searchview input, .openerp .oe_searchview textarea {
+  padding: 3px;
+  height: 14px;
+  font-size: 12px;
+  line-height: 18px;
+}
+.openerp .oe_searchview input:not([type]), .openerp .oe_searchview input[type="text"], .openerp .oe_searchview input[type="number"] {
+  width: 156px;
+  height: 22px;
+}
+.openerp .oe_searchview input[type="checkbox"] {
+  margin: 3px 3px 3px 4px;
+}
+.openerp .oe_searchview select {
+  margin: 2px 4px 2px 0;
+}
+.openerp .oe_searchview.oe_focused {
+  border-color: #a6a6fe;
+  -moz-box-shadow: 0 1px 2px #a6a6fe inset;
+  -webkit-box-shadow: 0 1px 2px #a6a6fe inset;
+  box-shadow: 0 1px 2px #a6a6fe inset;
+}
+.openerp .oe_searchview .oe_searchview_clear {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 18px;
+  width: 15px;
+  height: 24px;
+  background: url(../img/search_reset.gif) center center no-repeat;
+}
+.openerp .oe_searchview .oe_searchview_unfold_drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 24px;
+  padding: 0 7px 0 4px;
+  color: #cccccc;
+  cursor: pointer;
+}
+.openerp .oe_searchview .oe_searchview_unfold_drawer:hover {
+  color: #999999;
+}
+.openerp .oe_searchview .oe_searchview_unfold_drawer:before {
+  position: absolute;
+  top: 10px;
+  right: 7px;
+  width: 0;
+  height: 0;
+  display: inline-block;
+  content: "";
+  vertical-align: top;
+  border-top: 5px solid #4c4c4c;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+.openerp .oe_searchview .oe_searchview_search {
+  font-size: 1px;
+  letter-spacing: -1px;
+  color: transparent;
+  text-shadow: none;
+  font-weight: normal;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  position: absolute;
+  left: -13px;
+  top: 1px;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+.openerp .oe_searchview .oe_searchview_search:before {
+  font: 21px "mnmliconsRegular";
+  content: "r";
+  color: #a3a3a3;
+}
+.openerp .oe_searchview .oe_searchview_facets {
+  min-height: 22px;
+  margin: 0 35px 0 15px !important;
+}
+.openerp .oe_searchview .oe_searchview_facets * {
+  vertical-align: top;
+  display: inline-block;
+  line-height: 17px;
+}
+.openerp .oe_searchview .oe_searchview_facets .oe_searchview_facet {
+  margin: 1px 0;
+  font-size: 11px;
+}
+.openerp .oe_searchview .oe_searchview_facets .oe_searchview_facet:focus {
+  outline: none;
+}
+.openerp .oe_searchview .oe_searchview_facets .oe_searchview_input {
+  padding: 0 0 0 6px;
+  font-size: 12px;
+  height: 16px;
+  margin-top: 3px;
+}
+.openerp .oe_searchview .oe_searchview_facets .oe_searchview_input:focus {
+  outline: none;
+}
+.openerp .oe_searchview .oe_searchview_facets .oe_searchview_facet {
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  -webkit-font-smoothing: auto;
+}
+.openerp .oe_searchview .oe_searchview_facets .oe_searchview_facet:focus {
+  border-color: #a6a6fe;
+  -moz-box-shadow: 0 0 3px 1px #a6a6fe;
+  -webkit-box-shadow: 0 0 3px 1px #a6a6fe;
+  box-shadow: 0 0 3px 1px #a6a6fe;
+}
+.openerp .oe_searchview .oe_searchview_facets .oe_searchview_facet .oe_facet_values {
+  background: #f0f0fa;
+  -moz-border-radius: 0 3px 3px 0;
+  -webkit-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
+}
+.openerp .oe_searchview .oe_searchview_facets .oe_searchview_facet .oe_facet_category, .openerp .oe_searchview .oe_searchview_facets .oe_searchview_facet .oe_facet_value {
+  padding: 0 4px;
+}
+.openerp .oe_searchview .oe_searchview_facets .oe_searchview_facet .oe_facet_category {
+  color: white;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+}
+.openerp .oe_searchview .oe_searchview_facets .oe_searchview_facet .oe_facet_category.oe_i {
+  font-size: 16px;
+}
+.openerp .oe_searchview .oe_searchview_facets .oe_searchview_facet .oe_facet_value {
+  border-left: 1px solid #afafb6;
+  text-shadow: 0 1px 1px white;
+  color: #4c4c4c;
+}
+.openerp .oe_searchview .oe_searchview_facets .oe_searchview_facet .oe_facet_value:last-child {
+  padding-right: 16px;
+}
+.openerp .oe_searchview .oe_searchview_facets .oe_searchview_facet .oe_facet_remove {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  color: #8786b7;
+  line-height: 8px;
+  width: 12px;
+  height: 12px;
+  padding-top: 1px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  text-shadow: 0 1px 1px white;
+}
+.openerp .oe_searchview .oe_searchview_facets .oe_searchview_facet .oe_facet_remove:hover {
+  color: white;
+  background: #8786b7;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+.openerp .oe_searchview .oe-autocomplete {
+  display: none;
+  position: absolute;
+  width: 300px;
+  background-color: white;
+  border: 1px solid #afafb6;
+  z-index: 666;
+  margin-top: 2px;
+  cursor: default;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+.openerp .oe_searchview .oe-autocomplete ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 5px 0px;
+}
+.openerp .oe_searchview .oe-autocomplete ul li {
+  padding-left: 20px;
+  text-shadow: 0 0 0 white;
+}
+.openerp .oe_searchview .oe-autocomplete ul li span:first-child {
+  margin-right: 5px;
+}
+.openerp .oe_searchview .oe-autocomplete ul li span.oe-expand {
+  cursor: pointer;
+}
+.openerp .oe_searchview .oe-autocomplete ul li.oe-indent {
+  margin-left: 20px;
+}
+.openerp .oe_searchview .oe-autocomplete ul li.oe-selection-focus {
+  background-color: #7c7bad;
+  color: white;
+}
+.openerp .oe_searchview .oe-autocomplete ul li.oe-separator {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  border-top: 1px solid #afafb6;
+}
+.openerp .oe_searchview .oe-autocomplete ul li.oe-separator:last-child {
+  display: none;
+}
+.openerp .oe_searchview_drawer_container {
+  overflow: auto;
+}
+.openerp .oe_searchview_drawer {
+  display: none;
+  width: 100%;
+  cursor: default;
+  display: none;
+  overflow: hidden;
+  border-bottom: 1px solid #afafb6;
+  text-align: left;
+  padding: 8px 0;
+}
+.openerp .oe_searchview_drawer .badge {
+  font-size: 12px;
+  line-height: 12px;
+}
+.openerp .oe_searchview_drawer > div:first-child {
+  border: none;
+  padding-left: 0;
+}
+.openerp .oe_searchview_drawer > div:first-child li:hover:not(.badge) {
+  background-color: #f0f0fa;
+}
+.openerp .oe_searchview_drawer .col-md-5 {
+  padding-left: 0;
+}
+.openerp .oe_searchview_drawer dl {
+  margin-bottom: 0;
+}
+.openerp .oe_searchview_drawer dt {
+  color: #7c7bad;
+  font-size: 13px;
+  line-height: 24px;
+}
+.openerp .oe_searchview_drawer dd {
+  line-height: 24px;
+  font-size: 13px;
+  padding-top: 3px;
+}
+.openerp .oe_searchview_drawer h4, .openerp .oe_searchview_drawer h4 * {
+  margin: 0 0 0 2px;
+  padding-left: 20px;
+  cursor: pointer;
+  font-weight: normal;
+  display: inline-block;
+}
+.openerp .oe_searchview_drawer h4:hover, .openerp .oe_searchview_drawer h4 *:hover {
+  background-color: #f0f0fa;
+}
+.openerp .oe_searchview_drawer h4:before {
+  content: "▸ ";
+  color: #a3a3a3;
+}
+.openerp .oe_searchview_drawer button {
+  margin: 4px 0;
+}
+.openerp .oe_searchview_drawer .button {
+  border: none;
+  background: transparent;
+  padding: 0 2px;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+.openerp .oe_searchview_drawer .oe_searchview_section ul {
+  margin: 0 8px;
+  padding: 0;
+  list-style: none;
+  display: inline;
+}
+.openerp .oe_searchview_drawer .oe_searchview_section li {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  margin-right: 8px;
+}
+.openerp .oe_searchview_drawer .oe_searchview_section li > span {
+  display: inline-block;
+  max-width: 250px;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
+  overflow: hidden;
+}
+.openerp .oe_searchview_drawer form {
+  margin-left: 12px;
+}
+.openerp .oe_searchview_drawer form p {
+  margin: 4px 0;
+  line-height: 18px;
+}
+.openerp .oe_searchview_drawer form button {
+  margin: 0 0 8px -3px;
+}
+.openerp .oe_searchview_drawer .oe_searchview_savefilter form {
+  display: none;
+}
+.openerp .oe_searchview_drawer .oe_searchview_custom {
+  display: none;
+}
+.openerp .oe_searchview_drawer .oe_searchview_custom li {
+  cursor: pointer;
+  position: relative;
+  line-height: 14px;
+  margin-right: 0;
+}
+.openerp .oe_searchview_drawer .oe_searchview_custom li button {
+  position: absolute;
+  top: 0;
+  right: 5px;
+}
+.openerp .oe_searchview_drawer .oe_searchview_custom li a {
+  margin-left: 10px;
+  position: inherit;
+  visibility: hidden;
+  display: inline-block;
+}
+.openerp .oe_searchview_drawer .oe_searchview_custom li span:hover:not(.badge) {
+  background-color: #f0f0fa;
+}
+.openerp .oe_searchview_drawer .oe_searchview_custom li:hover a {
+  visibility: visible;
+}
+.openerp .oe_searchview_drawer .oe_searchview_custom label {
+  font-weight: normal;
+}
+.openerp .oe_searchview_drawer .oe_searchview_dashboard form {
+  display: none;
+  margin-top: 2px;
+}
+.openerp .oe_searchview_drawer .oe_searchview_advanced {
+  overflow: auto;
+}
+.openerp .oe_searchview_drawer .oe_searchview_advanced form {
+  display: none;
+  margin-top: 8px;
+}
+.openerp .oe_searchview_drawer .oe_searchview_advanced button.oe_add_condition:before {
+  content: "Z";
+  font-family: "entypoRegular" !important;
+  font-size: 24px;
+  font-weight: 300 !important;
+  margin-right: 4px;
+}
+.openerp .oe_searchview_drawer .oe_searchview_advanced ul {
+  list-style: none;
+  padding: 0;
+}
+.openerp .oe_searchview_drawer .oe_searchview_advanced li {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  white-space: nowrap;
+}
+.openerp .oe_searchview_drawer .oe_searchview_advanced li:first-child .searchview_extended_prop_or {
+  visibility: hidden;
+  margin-left: -14px;
+}
+.openerp .oe_searchview_drawer .oe_searchview_advanced .searchview_extended_prop_or {
+  opacity: 0.5;
+  margin-left: -14px;
+}
+.openerp .oe_searchview_drawer .oe_opened h4:before {
+  content: "▾ ";
+  position: relative;
+  top: -1px;
+}
+.openerp .oe_searchview_drawer .oe_opened form {
+  display: block;
+}
+.openerp .oe_searchview_drawer .oe_searchview_custom_delete, .openerp .oe_searchview_drawer .searchview_extended_delete_prop {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  line-height: 12px;
+  padding: 1px;
+  color: #8786b7;
+  line-height: 8px;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 0 1px 1px white;
+}
+.openerp .oe_searchview_drawer .oe_searchview_custom_delete:hover, .openerp .oe_searchview_drawer .searchview_extended_delete_prop:hover {
+  text-decoration: none;
+  color: white;
+  background: #8786b7;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+.openerp .oe_searchview_drawer .oe_searchview_custom_delete {
+  display: none;
+  position: absolute;
+  bottom: 1px;
+  right: 4px;
+}
+.openerp .oe_searchview_drawer .oe_searchview_custom_private:hover .oe_searchview_custom_delete, .openerp .oe_searchview_drawer .oe_searchview_custom_public:hover .oe_searchview_custom_delete {
+  display: inline-block;
+}
+.openerp .oe_searchview_drawer .oe_searchview_custom_public:after {
+  content: ",";
+  font-family: "entypoRegular" !important;
+  font-size: 22px;
+  font-weight: 300 !important;
+  margin: 0 0 0 4px;
+  padding: 0;
+}
+h4, .h4 {
+    font-size: 13px !important;
+}
+.openerp .oe_i {
+  font-family: "mnmliconsRegular" !important;
+  font-size: 21px;
+  font-weight: 300 !important;
+}
+.openerp .oe_e {
+  font-family: "entypoRegular" !important;
+  font-size: 34px;
+  font-weight: 300 !important;
+  line-height: 100%;
+}
+.openerp .oe_tag {
+  border: 1px solid #afafb6;
+  font-size: 11px;
+  padding: 2px 4px;
+  margin: 0 2px 2px 0;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  background: #f0f0fa;
+  color: #4C4C4C;
+}
+.openerp .oe_tag_dark {
+  background: #7C7BAD;
+  color: #eee;
+}
+
+/* BASE.CSS */
+
+@charset "utf-8";
+@font-face {
+  font-family: "mnmliconsRegular";
+  src: url("/web/static/src/font/mnmliconsv21-webfont.eot") format("eot");
+  src: url("/web/static/src/font/mnmliconsv21-webfont.woff") format("woff");
+  src: url("/web/static/src/font/mnmliconsv21-webfont.ttf") format("truetype");
+  src: url("/web/static/src/font/mnmliconsv21-webfont.svg") format("svg") active;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "EntypoRegular";
+  src: url("/web/static/src/font/entypo-webfont.eot") format("eot");
+  src: url("/web/static/src/font/entypo-webfont.eot?#iefix") format("embedded-opentype");
+  src: url("/web/static/src/font/entypo-webfont.woff") format("woff");
+  src: url("/web/static/src/font/entypo-webfont.ttf") format("truetype");
+  src: url("/web/static/src/font/entypo-webfont.svg") format("svg") active;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.openerp {
+  padding: 0;
+  margin: 0;
+  font-family: "Lucida Grande", Helvetica, Verdana, Arial, sans-serif;
+  color: #4c4c4c;
+  font-size: 13px;
+  background: white;
+  /* http://www.quirksmode.org/dom/inputfile.html
+   * http://stackoverflow.com/questions/2855589/replace-input-type-file-by-an-image
+   */
+}
+
+.modal-title {
+    font-size: 18px !important;
+}
+
+.label {
+    border-radius: 0.25em;
+    color: #999 !important;
+    display: inline;
+    font-size: 80% !important;
+    font-weight: normal;
+    line-height: 1;
+    padding: 0.2em 0.6em 0.3em;
+    text-align: center;
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+
+.openerp .oe_list .oe_form .oe_form_nosheet {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.openerp .oe_list .oe_form .oe_form_field {
+  width: auto;
+  position: absolute;
+  margin: 0 !important;
+  padding: 0;
+}

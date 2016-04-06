@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+        <record id="tss_report_form" model="ir.ui.view">
+            <field name="name">tss.report.form</field>
+            <field name="model">tss.report</field>
+            <field name="arch" type="xml">
+                <form string="Archivo de AutodeterminacionTSS">
+
+                        <header>
+                            <button name="" string="Re-Generar Archivo" type="object" class="oe_highlight" />
+                            <field name="state" widget="statusbar" statusbar_visible="draft,sent,cancel" statusbar_colors='{"draft":"blue","sent":"black"}'/>
+
+                        </header>
+                        <group col="4">
+                            <!--field name="name"/-->
+                            <field name="company_id"/>
+                            <field name="tipo_de_archivo"/>
+                            <field name="period_id"/>
+                            <field name="line_count"/>
+                            <field name="state"/>
+                            <field name="report" filename="report_name"/>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Lineas">
+                                <field name="tss_report_line_ids" colspan="4" nolabel="1">
+                                    <tree string="Lineas">
+                                        <field name="CLAVE_NOMINA"/>
+                                        <field name="TIPO_DOCUMENTO"/>
+                                        <field name="NUMERO_DOC"/>
+                                        <field name="NOMBRES"/>
+                                        <field name="PRIMER_APELLIDO"/>
+                                        <field name="SEGUNDO_APELLIDO"/>
+                                        <field name="SEXO"/>
+                                        <field name="FECHA_NAC"/>
+                                        <field name="SALARIO_COT"/>
+                                        <field name="APORTE_VOL"/>
+                                        <field name="SALARIO_ISR"/>
+                                        <field name="OTRAS_REM"/>
+                                        <field name="RNC_CED_AGENT_RET"/>
+                                        <field name="REM_OT_AGENT"/>
+                                        <field name="ING_EXENT_PERIODO"/>
+                                        <field name="SALDO_FAVOR_PERIODO"/>
+                                        <field name="SALARIO_INFOTEP"/>
+                                        <field name="TIPO_INGRESO"/>
+
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+
+                </form>
+            </field>
+        </record>
+
+         <record id="tss_report_tree" model="ir.ui.view">
+             <field name="name">tss.report.tree</field>
+             <field name="model">tss.report</field>
+             <field name="arch" type="xml">
+                 <tree string="Archivos de Autodeterminacion">
+                     <field name="company_id"/>
+                            <field name="tipo_de_archivo"/>
+                            <field name="period_id"/>
+                            <field name="line_count"/>
+                            <field name="state"/>
+                            <field name="report" filename="report_name"/>
+                 </tree>
+             </field>
+         </record>
+
+        <record id="action_tss_report_extract" model="ir.actions.act_window">
+            <field name="name">Generacion Archivo de Autodeterminacion</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">tss.report</field>
+            <field name="view_mode">tree,form</field>
+
+        </record>
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="menu_tss_report_extract" parent="hr_payroll.menu_hr_root_payroll" action="action_tss_report_extract" sequence="40"/>
+
+    </data>
+</openerp>
