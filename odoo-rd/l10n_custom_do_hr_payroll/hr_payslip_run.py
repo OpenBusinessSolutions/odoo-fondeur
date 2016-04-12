@@ -56,17 +56,25 @@ class hr_payslip_run (orm.Model) :
 
     def close_payslip_run(self, cr, uid, ids, context=None):
         slip_pool = self.pool.get('hr.payslip')
-        slip_ids = [x.id for x in self.browse(cr, uid,ids[0], context=context).slip_ids]
+        slip_ids = [x.id for x in self.browse(cr, uid, ids[0], context=context).slip_ids]
         slip_pool.process_sheet(cr, uid, slip_ids, context=context)
         return self.write(cr, uid, ids, {'state': 'close'}, context=context)
 
     def confirm_payslips(self, cr, uid, ids, context=None):
+        payslip_pool = self.pool.get('hr.payslip')
         for payslip_run in self.browse(cr, uid, ids, context=context):
-            payslip_obj = self.pool.get('hr.payslip')
-            payslips = payslip_obj.browse(cr, uid, payslip_run.slip_ids, context)
-            for payslip in payslips:
-                payslip_id = payslip.id
-                payslip_id.process_sheet()
+            slip_ids = []
+            for slip_id in payslip_run.slip_ids:
+                # TODO is it necessary to interleave the calls ?
+                payslip_pool.signal_workflow(cr, uid, [slip_id.id], 'hr_verify_sheet')
+                payslip_pool.signal_workflow(cr, uid, [slip_id.id], 'process_sheet')
+                slip_ids.append(slip_id.id)
+        return self.write(cr, uid, ids, {'state': 'close'}, context=context)
+            # payslip_obj = self.pool.get('hr.payslip')
+            # payslips = payslip_obj.browse(cr, uid, payslip_run.slip_ids, context)
+            # for payslip in payslips:
+            #     payslip_id = payslip.id
+            #     payslip_id.process_sheet()
 
     _defaults = {
         'company_id': lambda self, cr, uid, c: self.pool.get('res.company')._company_default_get(cr, uid, 'hr.payslip.run', context=c),

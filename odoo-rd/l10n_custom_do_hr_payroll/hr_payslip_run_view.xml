@@ -16,7 +16,7 @@
                     <field name="bank_id" />
                 </field>
                                 <button string = "Generate Payslips" position = "after"> 
-                    <button name="close_payslip_run" type="object" states="draft" icon="STOCK_GOTO_BOTTOM" string="Confirmar Nominas" />
+                    <button name="confirm_payslips" type="object" states="draft" icon="STOCK_GOTO_BOTTOM" string="Confirmar Nominas" />
                     </button>
             </field>
         </record>
