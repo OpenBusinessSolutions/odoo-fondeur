@@ -55,9 +55,9 @@ class hr_payslip_run (orm.Model) :
         return comp.currency_id.id
 
     def close_payslip_run(self, cr, uid, ids, context=None):
-        slip_pool = self.pool.get('hr.payslip')
-        slip_ids = [x.id for x in self.browse(cr, uid, ids[0], context=context).slip_ids]
-        slip_pool.process_sheet(cr, uid, slip_ids, context=context)
+        # slip_pool = self.pool.get('hr.payslip')
+        # slip_ids = [x.id for x in self.browse(cr, uid, ids[0], context=context).slip_ids]
+        # slip_pool.process_sheet(cr, uid, slip_ids, context=context)
         return self.write(cr, uid, ids, {'state': 'close'}, context=context)
 
     def confirm_payslips(self, cr, uid, ids, context=None):
