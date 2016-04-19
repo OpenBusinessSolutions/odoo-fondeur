@@ -3,14 +3,16 @@
 # * website
 # 
 # Translators:
+# Paolo Valier, 2016
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2014
+# Paolo Valier, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-07-22 08:25+0000\n"
-"PO-Revision-Date: 2015-07-22 09:26+0000\n"
-"Last-Translator: Martin Trigaux\n"
+"PO-Revision-Date: 2016-03-19 21:18+0000\n"
+"Last-Translator: Paolo Valier\n"
 "Language-Team: Italian (http://www.transifex.com/odoo/odoo-8/language/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -97,7 +99,7 @@ msgstr ".xml"
 #: code:addons/website/static/src/xml/website.seo.xml:22
 #, python-format
 msgid "1. Define Keywords"
-msgstr ""
+msgstr "Definisci le parole chiave"
 
 #. module: website
 #. openerp-web
@@ -262,7 +264,7 @@ msgstr "Aggiungi un URL a un immagine"
 #: code:addons/website/static/src/xml/website.seo.xml:25
 #, python-format
 msgid "Add keyword:"
-msgstr ""
+msgstr "Aggiungi keyword:"
 
 #. module: website
 #. openerp-web
@@ -290,7 +292,7 @@ msgstr "Tutte queste icone sono sotto licenza creative commons, cosi che tu poss
 #: code:addons/website/static/src/xml/website.editor.xml:212
 #, python-format
 msgid "Alternate Upload"
-msgstr ""
+msgstr "Upload alternativo"
 
 #. module: website
 #: view:website:website.themes
@@ -375,7 +377,7 @@ msgstr "Banner"
 #. module: website
 #: view:website:website.snippets
 msgid "Banner Odoo Image"
-msgstr ""
+msgstr "Immagine Banner Odoo"
 
 #. module: website
 #. openerp-web
@@ -407,7 +409,7 @@ msgstr "Principiante"
 #. module: website
 #: view:website:website.snippets
 msgid "Big Message"
-msgstr ""
+msgstr "Messaggio grande"
 
 #. module: website
 #: view:website:website.snippets
@@ -417,7 +419,7 @@ msgstr "Immagine grande"
 #. module: website
 #: view:website:website.snippet_options
 msgid "Bigger Text"
-msgstr ""
+msgstr "Testo più grande"
 
 #. module: website
 #: view:website:website.snippet_options
@@ -634,7 +636,7 @@ msgstr "Nome dell'azienda"
 #. module: website
 #: view:website:website.snippets
 msgid "Comparisons"
-msgstr ""
+msgstr "Confronto"
 
 #. module: website
 #: view:website.config.settings:website.view_website_config_settings
@@ -649,7 +651,7 @@ msgstr "Configura menu del sito web"
 #. module: website
 #: view:website:website.layout
 msgid "Connect with us"
-msgstr ""
+msgstr "Entra in contatto con noi"
 
 #. module: website
 #: view:website:website.snippets
@@ -834,7 +836,7 @@ msgstr "Lingua predefinita"
 #: field:website,default_lang_code:0
 #: field:website.config.settings,default_lang_code:0
 msgid "Default language code"
-msgstr ""
+msgstr "Codice predefinito della lingua"
 
 #. module: website
 #: view:website:website.snippets
@@ -888,7 +890,7 @@ msgstr "Annulla"
 #: code:addons/website/static/src/xml/website.editor.xml:298
 #, python-format
 msgid "Discard edition"
-msgstr ""
+msgstr "Scarta versione"
 
 #. module: website
 #: view:website:website.snippets
@@ -898,7 +900,7 @@ msgstr "Scopri di più riguardo a Odoo"
 #. module: website
 #: view:website:website.template_partner_comment
 msgid "Discuss and Comments"
-msgstr ""
+msgstr "Discussione e Commenti"
 
 #. module: website
 #. openerp-web
@@ -930,7 +932,7 @@ msgstr "Trascina questo Blocco"
 #: code:addons/website/static/src/js/website.tour.banner.js:34
 #, python-format
 msgid "Drag & Drop a Banner"
-msgstr ""
+msgstr "Trascina questo Banner"
 
 #. module: website
 #. openerp-web
@@ -1000,12 +1002,12 @@ msgstr "Modifica Voce di Menu"
 #. module: website
 #: view:website:website.layout
 msgid "Edit Top Menu"
-msgstr ""
+msgstr "Modifica il Menu superiore"
 
 #. module: website
 #: view:website:website.publish_management
 msgid "Edit in backend"
-msgstr ""
+msgstr "Modifica in backend"
 
 #. module: website
 #: view:website:website.page_404
@@ -1083,7 +1085,7 @@ msgstr ""
 #. module: website
 #: view:website:website.snippet_options
 msgid "Extra-Large"
-msgstr ""
+msgstr "Extra-Large"
 
 #. module: website
 #: view:website:website.snippets
@@ -1222,12 +1224,12 @@ msgstr "Account Google+"
 #. module: website
 #: view:website:website.snippets
 msgid "Great Value"
-msgstr ""
+msgstr "Vero Affare"
 
 #. module: website
 #: view:website:website.aboutus
 msgid "Great products for great people"
-msgstr ""
+msgstr "Grandi prodotti per grandi persone"
 
 #. module: website
 #: view:website:website.snippets
@@ -1341,7 +1343,7 @@ msgstr ""
 #: code:addons/website/static/src/xml/website.editor.xml:301
 #, python-format
 msgid "If you discard the current edition,"
-msgstr ""
+msgstr "Se scarti questa versione, "
 
 #. module: website
 #: view:website:website.snippets
@@ -1388,7 +1390,7 @@ msgid ""
 "                            master page. Each modification on the master page\n"
 "                            is automatically applied to all translated\n"
 "                            versions."
-msgstr ""
+msgstr "In questa modalità puoi solo tradurre i testi.\nPer cambiare la struttura della pagina devi apportare \nle modifiche alla pagina master. Tutte le modifiche alla\npagina master sono automaticamente applicate alle\nversioni tradotte."
 
 #. module: website
 #. openerp-web
@@ -1588,7 +1590,7 @@ msgstr "Margine"
 #: code:addons/website/static/src/xml/website.snippets.xml:60
 #, python-format
 msgid "Margin resize"
-msgstr ""
+msgstr "Ridimensiona il margine"
 
 #. module: website
 #: view:website:website.403 view:website:website.404
@@ -1703,7 +1705,7 @@ msgstr "Avanti →"
 #. module: website
 #: view:website:website.snippets
 msgid "No support"
-msgstr ""
+msgstr "Nessun supporto"
 
 #. module: website
 #: view:website:website.snippet_options
@@ -1833,7 +1835,7 @@ msgstr "Le nostre Offerte"
 #. module: website
 #: view:website:website.snippets
 msgid "Our References"
-msgstr ""
+msgstr "I nostri riferimenti"
 
 #. module: website
 #: view:website:website.aboutus
@@ -2108,7 +2110,7 @@ msgstr "Elimina link"
 #. module: website
 #: view:website:website.snippet_options
 msgid "Remove Slide"
-msgstr ""
+msgstr "Rimuovi Slide"
 
 #. module: website
 #: view:website:website.snippet_options
@@ -2135,12 +2137,12 @@ msgstr "Ridimensiona"
 #. module: website
 #: field:ir.attachment,datas_big:0
 msgid "Resized file content"
-msgstr ""
+msgstr "Ridimensiona il contenuto del file"
 
 #. module: website
 #: view:website:website.snippet_options
 msgid "Right"
-msgstr ""
+msgstr "Destra"
 
 #. module: website
 #. openerp-web
@@ -2202,7 +2204,7 @@ msgstr "Velocità di scorrimento"
 #: code:addons/website/static/src/js/website.tour.banner.js:104
 #, python-format
 msgid "Scroll to check rendering and then close the mobile preview."
-msgstr ""
+msgstr "Scorri per controllare la visualizzazione e poi chiudi l'anteprima mobile."
 
 #. module: website
 #: view:website:website.snippets
@@ -2349,7 +2351,7 @@ msgstr "Lento"
 #: view:website:website.snippet_options
 #, python-format
 msgid "Small"
-msgstr ""
+msgstr "Piccolo"
 
 #. module: website
 #: view:website:website.view_website_form
@@ -2428,7 +2430,7 @@ msgstr "Sottotitolo 3"
 #: code:addons/website/static/src/xml/website.editor.xml:95
 #, python-format
 msgid "Success"
-msgstr ""
+msgstr "Successo"
 
 #. module: website
 #: view:website:website.snippet_options
@@ -2443,7 +2445,7 @@ msgstr "Sweet and cheery"
 #. module: website
 #: view:website:website.info
 msgid "Technical name:"
-msgstr ""
+msgstr "Nome tecnico:"
 
 #. module: website
 #: view:website:website.snippets
@@ -2532,7 +2534,7 @@ msgstr "L'immagine non puo' essere rimossa in quanto in uso nelle \n            
 #. module: website
 #: view:website:website.403
 msgid "The page you were looking for could not be authorized."
-msgstr ""
+msgstr "Non sei autorizzato ad accedere alla pagina che stavi cercando."
 
 #. module: website
 #: view:website:website.404
@@ -2810,7 +2812,7 @@ msgstr "Sito Web"
 #. module: website
 #: model:ir.actions.act_window,name:website.action_module_website
 msgid "Website Apps"
-msgstr ""
+msgstr "App Sito Web"
 
 #. module: website
 #: model:ir.actions.act_url,name:website.action_website_homepage
@@ -2841,12 +2843,12 @@ msgstr ""
 #. module: website
 #: field:ir.actions.server,website_path:0
 msgid "Website Path"
-msgstr ""
+msgstr "Percorso del sito web"
 
 #. module: website
 #: model:crm.case.section,name:website.salesteam_website_sales
 msgid "Website Sales"
-msgstr ""
+msgstr "Vendite del sito web"
 
 #. module: website
 #: model:ir.actions.act_window,name:website.action_website_configuration
@@ -2874,19 +2876,19 @@ msgstr "Menu sito web"
 #: field:ir.ui.view,website_meta_description:0
 #: field:website.seo.metadata,website_meta_description:0
 msgid "Website meta description"
-msgstr ""
+msgstr "Descrizioni meta del sito"
 
 #. module: website
 #: field:ir.ui.view,website_meta_keywords:0
 #: field:website.seo.metadata,website_meta_keywords:0
 msgid "Website meta keywords"
-msgstr ""
+msgstr "Meta parole chiave del sito"
 
 #. module: website
 #: field:ir.ui.view,website_meta_title:0
 #: field:website.seo.metadata,website_meta_title:0
 msgid "Website meta title"
-msgstr ""
+msgstr "Website meta title"
 
 #. module: website
 #: view:website:website.view_website_tree
@@ -3005,12 +3007,12 @@ msgstr ""
 #. module: website
 #: view:website:website.snippets
 msgid "Write one sentence to convince visitor about your message."
-msgstr ""
+msgstr "Scrivi una frase per convincere il visitatore circa il tuo messaggio."
 
 #. module: website
 #: view:website:website.snippets
 msgid "Write what the customer would like to know,"
-msgstr ""
+msgstr "Scrivi ciò che i clienti vorrebbero sapere,"
 
 #. module: website
 #: view:website:website.snippet_options
@@ -3039,7 +3041,7 @@ msgstr "Stai per entrare in modalità traduzione."
 #: code:addons/website/static/src/xml/website.editor.xml:305
 #, python-format
 msgid "You can cancel to return to the edition mode."
-msgstr ""
+msgstr "Puoi annullare per tornare alla modalità di modifica."
 
 #. module: website
 #: view:website:website.themes
@@ -3070,7 +3072,7 @@ msgstr "Account Youtube"
 #: code:addons/website/static/src/xml/website.editor.xml:302
 #, python-format
 msgid "all"
-msgstr ""
+msgstr "tutte"
 
 #. module: website
 #: view:website:website.http_error_debug
@@ -3116,7 +3118,7 @@ msgstr ""
 #: code:addons/website/static/src/xml/website.seo.xml:57
 #, python-format
 msgid "how your page will be listed on Google"
-msgstr ""
+msgstr "come la tua pagina sarà listata su Google"
 
 #. module: website
 #. openerp-web
@@ -3232,12 +3234,12 @@ msgstr "per mese"
 #. module: website
 #: view:website:website.snippets
 msgid "rounded corner"
-msgstr ""
+msgstr "bordo arrotondato"
 
 #. module: website
 #: view:website:website.sitemap_index_xml
 msgid "sitemap-"
-msgstr ""
+msgstr "sitemap-"
 
 #. module: website
 #: view:website:website.robots

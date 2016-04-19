@@ -9,13 +9,13 @@ msgstr ""
 "Project-Id-Version: Odoo 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-21 14:08+0000\n"
-"PO-Revision-Date: 2015-09-04 23:11+0000\n"
-"Last-Translator: Eneldo Serrata <eneldoserrata@gmail.com>\n"
-"Language-Team: Spanish (Dominican Republic) (http://www.transifex.com/odoo/odoo-8/language/es_DO/)\n"
+"PO-Revision-Date: 2015-07-17 08:02+0000\n"
+"Last-Translator: Martin Trigaux\n"
+"Language-Team: Spanish (http://www.transifex.com/odoo/odoo-8/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es_DO\n"
+"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: sale_stock
@@ -35,7 +35,7 @@ msgid ""
 "Allows you to add delivery methods in sales orders and delivery orders.\n"
 "You can define your own carrier and delivery grids for prices.\n"
 "-This installs the module delivery."
-msgstr "Permite añadir métodos de envío en los pedidos de venta y albaranes de envío.\nPuede definir sus propios transportistas y tablas de envío para los precios.\n- Esto instala el módulo delivery."
+msgstr "Permite añadir métodos de envío en los pedidos de venta y conduces de envío.\nPuede definir sus propios transportistas y tablas de envío para los precios.\n- Esto instala el módulo delivery."
 
 #. module: sale_stock
 #: help:sale.config.settings,group_route_so_lines:0
@@ -109,7 +109,7 @@ msgstr "Entregado"
 #: model:ir.actions.act_window,name:sale_stock.outgoing_picking_list_to_invoice
 #: model:ir.ui.menu,name:sale_stock.menu_action_picking_list_to_invoice
 msgid "Deliveries to Invoice"
-msgstr "Albaranes a facturar"
+msgstr "Conduces a facturar"
 
 #. module: sale_stock
 #: model:res.groups,name:sale_stock.group_invoice_deli_orders
@@ -151,7 +151,7 @@ msgstr "Rutas de inventario"
 #. module: sale_stock
 #: selection:sale.config.settings,default_order_policy:0
 msgid "Invoice based on deliveries"
-msgstr "Facturar desde albaranes"
+msgstr "Facturar desde el conduce"
 
 #. module: sale_stock
 #: selection:sale.config.settings,default_order_policy:0
@@ -210,12 +210,12 @@ msgstr "¡Información del alabarán! "
 #. module: sale_stock
 #: model:ir.model,name:sale_stock.model_stock_picking
 msgid "Picking List"
-msgstr "Albarán"
+msgstr "Conduce"
 
 #. module: sale_stock
 #: field:sale.order,picking_ids:0
 msgid "Picking associated to this sale"
-msgstr "Albarán asociado a esta venta"
+msgstr "Conduce asociado a esta venta"
 
 #. module: sale_stock
 #: field:sale.config.settings,task_work:0
@@ -330,12 +330,12 @@ msgstr "A facturar"
 msgid ""
 "To allow your salesman to make invoices for Delivery Orders using the menu "
 "'Deliveries to Invoice'."
-msgstr "Para permitir a su comercial realizar facturas desde las órdenes de entrega usando el menú 'Entregas a facturar'."
+msgstr "Para permitir a su comercial realizar facturas desde los conduces de entrega usando el menú 'Entregas a facturar'."
 
 #. module: sale_stock
 #: view:sale.order:sale_stock.view_order_form_inherit
 msgid "View Delivery Order"
-msgstr "Ver orden de entrega"
+msgstr "Ver conduces"
 
 #. module: sale_stock
 #: field:sale.order,warehouse_id:0 field:sale.report,warehouse_id:0

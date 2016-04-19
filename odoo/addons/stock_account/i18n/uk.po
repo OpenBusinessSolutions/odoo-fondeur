@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Odoo 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-21 14:07+0000\n"
-"PO-Revision-Date: 2015-08-23 12:38+0000\n"
+"PO-Revision-Date: 2016-02-20 15:57+0000\n"
 "Last-Translator: Bogdan\n"
 "Language-Team: Ukrainian (http://www.transifex.com/odoo/odoo-8/language/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgstr ""
 #. module: stock_account
 #: view:product.category:stock_account.view_category_property_form
 msgid "Account Stock Properties"
-msgstr ""
+msgstr "Властивості рахунків"
 
 #. module: stock_account
 #: view:stock.config.settings:stock_account.view_stock_config_settings_inherit
@@ -259,18 +259,18 @@ msgstr "Інвентаризація"
 #. module: stock_account
 #: model:ir.model,name:stock_account.model_stock_location
 msgid "Inventory Locations"
-msgstr ""
+msgstr "Розташування складів"
 
 #. module: stock_account
 #: view:product.template:stock_account.view_template_property_form
 #: field:product.template,valuation:0
 msgid "Inventory Valuation"
-msgstr ""
+msgstr "Залишки по складу"
 
 #. module: stock_account
 #: field:stock.history,inventory_value:0
 msgid "Inventory Value"
-msgstr ""
+msgstr "Кількість запасів"
 
 #. module: stock_account
 #: field:procurement.order,invoice_state:0 field:stock.move,invoice_state:0
@@ -281,13 +281,13 @@ msgstr "Контроль інвойса"
 #. module: stock_account
 #: field:stock.invoice.onshipping,invoice_date:0
 msgid "Invoice Date"
-msgstr ""
+msgstr "Дата рахунку"
 
 #. module: stock_account
 #: field:procurement.rule,invoice_state:0
 #: field:stock.location.path,invoice_state:0
 msgid "Invoice Status"
-msgstr ""
+msgstr "Статус рахунку"
 
 #. module: stock_account
 #: selection:procurement.order,invoice_state:0
@@ -429,7 +429,7 @@ msgstr "Категорія продукту"
 #. module: stock_account
 #: field:stock.history,quantity:0
 msgid "Product Quantity"
-msgstr ""
+msgstr "Кількість"
 
 #. module: stock_account
 #: model:ir.model,name:stock_account.model_product_template
@@ -449,7 +449,7 @@ msgstr "Кількості"
 #. module: stock_account
 #: selection:product.template,cost_method:0
 msgid "Real Price"
-msgstr ""
+msgstr "Реальна ціна"
 
 #. module: stock_account
 #: selection:product.template,valuation:0
@@ -543,17 +543,17 @@ msgstr ""
 #. module: stock_account
 #: field:product.category,property_stock_valuation_account_id:0
 msgid "Stock Valuation Account"
-msgstr ""
+msgstr "Рахунок оцінки запасів"
 
 #. module: stock_account
 #: field:stock.location,valuation_in_account_id:0
 msgid "Stock Valuation Account (Incoming)"
-msgstr ""
+msgstr "Рахунок оцінки запасів (Надходження)"
 
 #. module: stock_account
 #: field:stock.location,valuation_out_account_id:0
 msgid "Stock Valuation Account (Outgoing)"
-msgstr ""
+msgstr "Рахунок оцінки запасів (Списання)"
 
 #. module: stock_account
 #: code:addons/stock_account/wizard/stock_valuation_history.py:30
@@ -681,7 +681,7 @@ msgstr ""
 #. module: stock_account
 #: view:stock.change.standard.price:stock_account.view_change_standard_price
 msgid "_Apply"
-msgstr ""
+msgstr "_Застосувати"
 
 #. module: stock_account
 #: view:stock.change.standard.price:stock_account.view_change_standard_price

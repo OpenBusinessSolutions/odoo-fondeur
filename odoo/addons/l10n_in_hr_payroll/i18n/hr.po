@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Odoo 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-11-24 02:53+0000\n"
-"PO-Revision-Date: 2015-07-17 07:30+0000\n"
+"PO-Revision-Date: 2016-02-12 13:33+0000\n"
 "Last-Translator: Martin Trigaux\n"
 "Language-Team: Croatian (http://www.transifex.com/odoo/odoo-8/language/hr/)\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr ""
 #. module: l10n_in_hr_payroll
 #: field:payment.advice.report,employee_bank_no:0
 msgid "Employee Bank Account"
-msgstr ""
+msgstr "Bankovni račun zaposlenika"
 
 #. module: l10n_in_hr_payroll
 #: view:payment.advice.report:0
@@ -181,7 +181,7 @@ msgstr ""
 #. module: l10n_in_hr_payroll
 #: field:hr.payroll.advice,batch_id:0
 msgid "Batch"
-msgstr ""
+msgstr "Količina"
 
 #. module: l10n_in_hr_payroll
 #: report:paylip.details.in:0
@@ -206,7 +206,7 @@ msgstr ""
 #. module: l10n_in_hr_payroll
 #: report:payroll.advice:0
 msgid "For"
-msgstr ""
+msgstr "Za"
 
 #. module: l10n_in_hr_payroll
 #: report:paylip.details.in:0
@@ -372,7 +372,7 @@ msgstr ""
 #. module: l10n_in_hr_payroll
 #: field:hr.payroll.advice,line_ids:0
 msgid "Employee Salary"
-msgstr ""
+msgstr "Plača zaposlenika"
 
 #. module: l10n_in_hr_payroll
 #: selection:payment.advice.report,month:0 selection:payslip.report,month:0
@@ -417,7 +417,7 @@ msgstr ""
 #. module: l10n_in_hr_payroll
 #: report:paylip.details.in:0 field:payslip.report,date_to:0
 msgid "Date To"
-msgstr ""
+msgstr "Datum do"
 
 #. module: l10n_in_hr_payroll
 #: field:hr.contract,tds:0
@@ -432,7 +432,7 @@ msgstr ""
 #. module: l10n_in_hr_payroll
 #: constraint:hr.contract:0
 msgid "Error! Contract start-date must be less than contract end-date."
-msgstr ""
+msgstr "Greška! Početni datum ugovora mora biti manji od završnog datuma ugovora."
 
 #. module: l10n_in_hr_payroll
 #: field:res.company,dearness_allowance:0
@@ -447,7 +447,7 @@ msgstr "Kolovoz"
 #. module: l10n_in_hr_payroll
 #: view:hr.contract:0
 msgid "Deduction"
-msgstr ""
+msgstr "Odbitak"
 
 #. module: l10n_in_hr_payroll
 #: report:payroll.advice:0
@@ -533,7 +533,7 @@ msgstr "Od datuma"
 #. module: l10n_in_hr_payroll
 #: report:salary.detail.byyear:0
 msgid "Employee Name"
-msgstr ""
+msgstr "Ime djelatnika"
 
 #. module: l10n_in_hr_payroll
 #: model:ir.model,name:l10n_in_hr_payroll.model_payment_advice_report
@@ -899,7 +899,7 @@ msgstr "Potražuje"
 #. module: l10n_in_hr_payroll
 #: field:hr.payroll.advice.line,name:0 report:payroll.advice:0
 msgid "Bank Account No."
-msgstr ""
+msgstr "Broj bankovnog računa"
 
 #. module: l10n_in_hr_payroll
 #: help:hr.payroll.advice,date:0

@@ -3,19 +3,19 @@
 # * account_anglo_saxon
 # 
 # Translators:
-# Eneldo Serrata <eneldoserrata@gmail.com>, 2015
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-21 14:07+0000\n"
-"PO-Revision-Date: 2015-08-01 22:27+0000\n"
-"Last-Translator: Eneldo Serrata <eneldoserrata@gmail.com>\n"
-"Language-Team: Spanish (Dominican Republic) (http://www.transifex.com/odoo/odoo-8/language/es_DO/)\n"
+"PO-Revision-Date: 2015-07-17 06:40+0000\n"
+"Last-Translator: Martin Trigaux\n"
+"Language-Team: Spanish (http://www.transifex.com/odoo/odoo-8/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: es_DO\n"
+"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: account_anglo_saxon
@@ -23,7 +23,7 @@ msgstr ""
 msgid ""
 "If the invoice was generated from a stock.picking, reference to the related "
 "move line."
-msgstr "Si la factura se genera a partir de un conduce, la referencia a la línea de acción relacionada."
+msgstr "Si la factura fue generada de un conduce, referencia de la línea de movimiento relacionada."
 
 #. module: account_anglo_saxon
 #: model:ir.model,name:account_anglo_saxon.model_account_invoice
@@ -38,7 +38,7 @@ msgstr "Línea de factura"
 #. module: account_anglo_saxon
 #: field:account.invoice.line,move_id:0
 msgid "Move line"
-msgstr "Apunte contable"
+msgstr "Línea de movimiento"
 
 #. module: account_anglo_saxon
 #: model:ir.model,name:account_anglo_saxon.model_stock_picking
@@ -64,7 +64,7 @@ msgstr "Plantilla de producto"
 #. module: account_anglo_saxon
 #: model:ir.model,name:account_anglo_saxon.model_purchase_order
 msgid "Purchase Order"
-msgstr "Orden de compra"
+msgstr "Pedido de compra"
 
 #. module: account_anglo_saxon
 #: model:ir.model,name:account_anglo_saxon.model_stock_move
@@ -77,4 +77,4 @@ msgstr "Movimiento de existencias"
 msgid ""
 "This account will be used to value price difference between purchase price "
 "and cost price."
-msgstr "Esta cuenta se utiliza para valorar la diferencia de precios entre el precio de compra y precio de coste."
+msgstr "Esta cuenta se utilizará para valorar la diferencia de precios entre el precio de compra y precio de coste."

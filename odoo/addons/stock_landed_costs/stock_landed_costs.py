@@ -142,11 +142,11 @@ class stock_landed_cost(osv.osv):
         
         #Create account move lines for quants already out of stock
         if qty_out > 0:
-            debit_line = dict(debit_line,
+            debit_line = dict(base_line,
                               name=(line.name + ": " + str(qty_out) + _(' already out')),
                               quantity=qty_out,
                               account_id=already_out_account_id)
-            credit_line = dict(credit_line,
+            credit_line = dict(base_line,
                               name=(line.name + ": " + str(qty_out) + _(' already out')),
                               quantity=qty_out,
                               account_id=debit_account_id)
@@ -160,6 +160,30 @@ class stock_landed_cost(osv.osv):
                 credit_line['debit'] = -diff
             aml_obj.create(cr, uid, debit_line, context=context)
             aml_obj.create(cr, uid, credit_line, context=context)
+
+            # Ugly work-around to know if anglo-saxon accounting is used. In 9.0, we can use the
+            # field 'anglo_saxon_accounting' on the company.
+            if hasattr(self.pool['account.invoice.line'], '_anglo_saxon_sale_move_lines'):
+                debit_line = dict(base_line,
+                                  name=(line.name + ": " + str(qty_out) + _(' already out')),
+                                  quantity=qty_out,
+                                  account_id=credit_account_id)
+                credit_line = dict(base_line,
+                                  name=(line.name + ": " + str(qty_out) + _(' already out')),
+                                  quantity=qty_out,
+                                  account_id=already_out_account_id)
+
+                if diff > 0:
+                    debit_line['debit'] = diff
+                    credit_line['credit'] = diff
+                else:
+                    # negative cost, reverse the entry
+                    debit_line['credit'] = -diff
+                    credit_line['debit'] = -diff
+                aml_obj.create(cr, uid, debit_line, context=context)
+                aml_obj.create(cr, uid, credit_line, context=context)
+
+
         return True
 
     def _create_account_move(self, cr, uid, cost, context=None):
@@ -202,13 +226,13 @@ class stock_landed_cost(osv.osv):
             if not cost.valuation_adjustment_lines or not self._check_sum(cr, uid, cost, context=context):
                 raise osv.except_osv(_('Error!'), _('You cannot validate a landed cost which has no valid valuation lines.'))
             move_id = self._create_account_move(cr, uid, cost, context=context)
-            quant_dict = {}
             for line in cost.valuation_adjustment_lines:
                 if not line.move_id:
                     continue
                 per_unit = line.final_cost / line.quantity
                 diff = per_unit - line.former_cost_per_unit
                 quants = [quant for quant in line.move_id.quant_ids]
+                quant_dict = {}
                 for quant in quants:
                     if quant.id not in quant_dict:
                         quant_dict[quant.id] = quant.cost + diff

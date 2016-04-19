@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Odoo 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-01-21 14:07+0000\n"
-"PO-Revision-Date: 2015-07-21 15:15+0000\n"
+"PO-Revision-Date: 2016-02-11 23:13+0000\n"
 "Last-Translator: Martin Trigaux\n"
 "Language-Team: Spanish (Peru) (http://www.transifex.com/odoo/odoo-8/language/es_PE/)\n"
 "MIME-Version: 1.0\n"
@@ -168,13 +168,13 @@ msgstr ""
 #: code:addons/purchase/stock.py:198
 #, python-format
 msgid " Buy"
-msgstr ""
+msgstr "Comprar"
 
 #. module: purchase
 #: field:product.product,purchase_count:0
 #: field:product.template,purchase_count:0
 msgid "# Purchases"
-msgstr ""
+msgstr "Compras"
 
 #. module: purchase
 #: field:res.partner,supplier_invoice_count:0
@@ -184,12 +184,12 @@ msgstr ""
 #. module: purchase
 #: field:purchase.report,nbr:0
 msgid "# of Lines"
-msgstr ""
+msgstr "# de Líneas"
 
 #. module: purchase
 #: field:res.partner,purchase_order_count:0
 msgid "# of Purchase Order"
-msgstr ""
+msgstr "# de Orden de Compra"
 
 #. module: purchase
 #: model:email.template,subject:purchase.email_template_edi_purchase
@@ -204,7 +204,7 @@ msgstr ""
 #. module: purchase
 #: view:purchase.order:purchase.purchase_order_form
 msgid "(update)"
-msgstr ""
+msgstr "(actualizar)"
 
 #. module: purchase
 #: model:ir.actions.act_window,help:purchase.act_res_partner_2_supplier_invoices
@@ -394,7 +394,7 @@ msgstr ""
 #. module: purchase
 #: field:purchase.order.line,account_analytic_id:0
 msgid "Analytic Account"
-msgstr ""
+msgstr "Cuenta Analítica"
 
 #. module: purchase
 #: model:res.groups,name:purchase.group_analytic_accounting
@@ -410,7 +410,7 @@ msgstr ""
 #. module: purchase
 #: view:purchase.config.settings:purchase.view_purchase_configuration
 msgid "Apply"
-msgstr ""
+msgstr "Aplicar"
 
 #. module: purchase
 #: view:purchase.order:purchase.purchase_order_form
@@ -441,7 +441,7 @@ msgstr ""
 #. module: purchase
 #: field:purchase.report,price_average:0
 msgid "Average Price"
-msgstr ""
+msgstr "Precio Promedio"
 
 #. module: purchase
 #: field:stock.warehouse,buy_pull_id:0
@@ -538,13 +538,13 @@ msgstr ""
 #: view:purchase.order.group:purchase.view_purchase_order_group
 #: view:purchase.order.line_invoice:purchase.view_purchase_line_invoice
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #. module: purchase
 #: selection:purchase.order,state:0 selection:purchase.order.line,state:0
 #: selection:purchase.report,state:0
 msgid "Cancelled"
-msgstr ""
+msgstr "Cancelado"
 
 #. module: purchase
 #: code:addons/purchase/purchase.py:1016
@@ -555,7 +555,7 @@ msgstr ""
 #. module: purchase
 #: field:purchase.report,category_id:0
 msgid "Category"
-msgstr ""
+msgstr "Categoría"
 
 #. module: purchase
 #: view:purchase.report:purchase.view_purchase_order_search
@@ -570,14 +570,14 @@ msgstr ""
 #. module: purchase
 #: model:ir.model,name:purchase.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "Compañias"
 
 #. module: purchase
 #: field:purchase.order,company_id:0 field:purchase.order.line,company_id:0
 #: view:purchase.report:purchase.view_purchase_order_search
 #: field:purchase.report,company_id:0
 msgid "Company"
-msgstr ""
+msgstr "Compañia"
 
 #. module: purchase
 #: code:addons/purchase/purchase.py:515
@@ -588,7 +588,7 @@ msgstr ""
 #. module: purchase
 #: model:ir.ui.menu,name:purchase.menu_purchase_config_purchase
 msgid "Configuration"
-msgstr ""
+msgstr "Configuración"
 
 #. module: purchase
 #: code:addons/purchase/purchase.py:1231
@@ -605,7 +605,7 @@ msgstr ""
 #. module: purchase
 #: view:purchase.order.line_invoice:purchase.view_purchase_line_invoice
 msgid "Confirm"
-msgstr ""
+msgstr "Confirmar"
 
 #. module: purchase
 #: view:purchase.order:purchase.purchase_order_form
@@ -615,7 +615,7 @@ msgstr ""
 #. module: purchase
 #: selection:purchase.order.line,state:0
 msgid "Confirmed"
-msgstr ""
+msgstr "Confirmado"
 
 #. module: purchase
 #: model:ir.actions.act_window,name:purchase.action_view_purchase_line_invoice
@@ -628,7 +628,7 @@ msgstr ""
 #: field:purchase.order.line,create_uid:0
 #: field:purchase.order.line_invoice,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Creado por"
 
 #. module: purchase
 #: field:purchase.config.settings,create_date:0
@@ -636,12 +636,12 @@ msgstr ""
 #: field:purchase.order.line,create_date:0
 #: field:purchase.order.line_invoice,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "Creado en"
 
 #. module: purchase
 #: field:purchase.order,currency_id:0
 msgid "Currency"
-msgstr ""
+msgstr "Moneda"
 
 #. module: purchase
 #: view:purchase.order:purchase.purchase_order_form
@@ -666,7 +666,7 @@ msgstr ""
 #. module: purchase
 #: help:purchase.order,message_last_post:0
 msgid "Date of the last message posted on the record."
-msgstr ""
+msgstr "Fecha del ultimo mensaje actualizado en el registro"
 
 #. module: purchase
 #: help:purchase.order,date_approve:0
@@ -747,7 +747,7 @@ msgstr ""
 #: view:website:purchase.report_purchaseorder_document
 #: view:website:purchase.report_purchasequotation_document
 msgid "Description"
-msgstr ""
+msgstr "Descripción"
 
 #. module: purchase
 #: field:purchase.order,location_id:0 field:purchase.report,location_id:0
@@ -770,7 +770,7 @@ msgstr ""
 #: selection:purchase.order,state:0 selection:purchase.order.line,state:0
 #: selection:purchase.report,state:0
 msgid "Done"
-msgstr ""
+msgstr "Realizado"
 
 #. module: purchase
 #: selection:purchase.order.line,state:0
@@ -811,7 +811,7 @@ msgstr ""
 #: code:addons/purchase/stock.py:195
 #, python-format
 msgid "Error!"
-msgstr ""
+msgstr "Error!"
 
 #. module: purchase
 #: view:purchase.order:purchase.view_purchase_order_filter
@@ -840,7 +840,7 @@ msgstr ""
 #. module: purchase
 #: field:purchase.order,fiscal_position:0
 msgid "Fiscal Position"
-msgstr ""
+msgstr "Posicion Fiscal"
 
 #. module: purchase
 #: field:purchase.order,message_follower_ids:0
@@ -858,7 +858,7 @@ msgstr ""
 #: view:purchase.order.line:purchase.purchase_order_line_search
 #: view:purchase.report:purchase.view_purchase_order_search
 msgid "Group By"
-msgstr ""
+msgstr "Agrupado por"
 
 #. module: purchase
 #: view:purchase.order.line:purchase.purchase_order_line_search
@@ -877,7 +877,7 @@ msgstr ""
 #: field:purchase.order.group,id:0 field:purchase.order.line,id:0
 #: field:purchase.order.line_invoice,id:0 field:purchase.report,id:0
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: purchase
 #: help:purchase.order,message_unread:0
@@ -944,7 +944,7 @@ msgstr ""
 #. module: purchase
 #: model:ir.model,name:purchase.model_account_invoice
 msgid "Invoice"
-msgstr ""
+msgstr "Factura"
 
 #. module: purchase
 #: model:ir.ui.menu,name:purchase.menu_procurement_management_invoice
@@ -959,7 +959,7 @@ msgstr ""
 #. module: purchase
 #: model:ir.model,name:purchase.model_account_invoice_line
 msgid "Invoice Line"
-msgstr ""
+msgstr "Detalle de Factura"
 
 #. module: purchase
 #: field:purchase.order.line,invoice_lines:0
@@ -991,13 +991,13 @@ msgstr ""
 #. module: purchase
 #: field:purchase.order,invoiced_rate:0 field:purchase.order.line,invoiced:0
 msgid "Invoiced"
-msgstr ""
+msgstr "Facturada"
 
 #. module: purchase
 #: view:purchase.order:purchase.purchase_order_2_stock_picking
 #: field:purchase.order,invoice_count:0 field:purchase.order,invoice_ids:0
 msgid "Invoices"
-msgstr ""
+msgstr "Facturas"
 
 #. module: purchase
 #: view:purchase.order.line:purchase.purchase_order_line_form
@@ -1027,7 +1027,7 @@ msgstr ""
 #. module: purchase
 #: field:purchase.order,message_is_follower:0
 msgid "Is a Follower"
-msgstr ""
+msgstr "Es un Seguidor"
 
 #. module: purchase
 #: help:purchase.order,shipped:0
@@ -1042,12 +1042,12 @@ msgstr ""
 #. module: purchase
 #: field:purchase.order,journal_id:0
 msgid "Journal"
-msgstr ""
+msgstr "Diario"
 
 #. module: purchase
 #: field:purchase.order,message_last_post:0
 msgid "Last Message Date"
-msgstr ""
+msgstr "Fecha del último mensaje"
 
 #. module: purchase
 #: field:purchase.config.settings,write_uid:0 field:purchase.order,write_uid:0
@@ -1055,7 +1055,7 @@ msgstr ""
 #: field:purchase.order.line,write_uid:0
 #: field:purchase.order.line_invoice,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Actualizado última vez por"
 
 #. module: purchase
 #: field:purchase.config.settings,write_date:0
@@ -1063,7 +1063,7 @@ msgstr ""
 #: field:purchase.order.line,write_date:0
 #: field:purchase.order.line_invoice,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Ultima Actualización"
 
 #. module: purchase
 #: view:purchase.config.settings:purchase.view_purchase_configuration
@@ -1099,7 +1099,7 @@ msgstr ""
 #. module: purchase
 #: model:res.groups,name:purchase.group_purchase_manager
 msgid "Manager"
-msgstr ""
+msgstr "Gerente"
 
 #. module: purchase
 #: view:purchase.order.line:purchase.purchase_order_line_form2
@@ -1176,12 +1176,12 @@ msgstr ""
 #: view:purchase.order:purchase.view_purchase_order_filter
 #: view:purchase.order:purchase.view_request_for_quotation_filter
 msgid "Not Invoiced"
-msgstr ""
+msgstr "No Facturada"
 
 #. module: purchase
 #: view:purchase.order.line:purchase.purchase_order_line_form
 msgid "Notes"
-msgstr ""
+msgstr "Notas"
 
 #. module: purchase
 #: model:ir.actions.act_window,name:purchase.action_invoice_pending
@@ -1211,7 +1211,7 @@ msgstr ""
 #: field:purchase.order,date_order:0 field:purchase.order.line,date_order:0
 #: field:purchase.report,date:0
 msgid "Order Date"
-msgstr ""
+msgstr "Fecha de Pedido"
 
 #. module: purchase
 #: view:website:purchase.report_purchaseorder_document
@@ -1221,13 +1221,13 @@ msgstr ""
 #. module: purchase
 #: field:purchase.order,order_line:0
 msgid "Order Lines"
-msgstr ""
+msgstr "Líneas de Pedido"
 
 #. module: purchase
 #: view:purchase.order:purchase.view_purchase_order_filter
 #: view:purchase.report:purchase.view_purchase_order_search
 msgid "Order Month"
-msgstr ""
+msgstr "Mes del Pedido"
 
 #. module: purchase
 #: field:purchase.order,name:0
@@ -1254,7 +1254,7 @@ msgstr ""
 #. module: purchase
 #: view:purchase.report:purchase.view_purchase_order_search
 msgid "Orders"
-msgstr ""
+msgstr "Pedidos"
 
 #. module: purchase
 #: view:website:purchase.report_purchaseorder_document
@@ -1281,7 +1281,7 @@ msgstr ""
 #: model:ir.model,name:purchase.model_res_partner
 #: field:purchase.order.line,partner_id:0
 msgid "Partner"
-msgstr ""
+msgstr "Socio"
 
 #. module: purchase
 #: model:ir.ui.menu,name:purchase.menu_partner_categories_in_form
@@ -1343,7 +1343,7 @@ msgstr ""
 #. module: purchase
 #: field:purchase.order,pricelist_id:0 field:purchase.report,pricelist_id:0
 msgid "Pricelist"
-msgstr ""
+msgstr "Lista de Precio"
 
 #. module: purchase
 #: model:ir.actions.act_window,name:purchase.purchase_pricelist_version_action
@@ -1378,7 +1378,7 @@ msgstr ""
 #: view:purchase.order.line:purchase.purchase_order_line_search
 #: field:purchase.order.line,product_id:0 field:purchase.report,product_id:0
 msgid "Product"
-msgstr ""
+msgstr "Producto"
 
 #. module: purchase
 #: model:ir.ui.menu,name:purchase.menu_product_category_config_purchase
@@ -1388,7 +1388,7 @@ msgstr ""
 #. module: purchase
 #: model:ir.model,name:purchase.model_product_template
 msgid "Product Template"
-msgstr ""
+msgstr "Plantilla de Producto"
 
 #. module: purchase
 #: field:purchase.order.line,product_uom:0
@@ -1402,7 +1402,7 @@ msgstr ""
 #: model:ir.ui.menu,name:purchase.menu_product_in_config_purchase
 #: view:purchase.order:purchase.purchase_order_form
 msgid "Products"
-msgstr ""
+msgstr "Productos"
 
 #. module: purchase
 #: field:purchase.report,price_standard:0
@@ -1466,7 +1466,7 @@ msgstr ""
 #: view:purchase.order:purchase.purchase_order_tree
 #: model:res.request.link,name:purchase.req_link_purchase_order
 msgid "Purchase Order"
-msgstr ""
+msgstr "Orden de Compra"
 
 #. module: purchase
 #: view:website:purchase.report_purchaseorder_document
@@ -1572,7 +1572,7 @@ msgstr "Cant."
 #. module: purchase
 #: field:purchase.order.line,product_qty:0
 msgid "Quantity"
-msgstr ""
+msgstr "Cantidad"
 
 #. module: purchase
 #: code:addons/purchase/purchase.py:1388
@@ -1585,7 +1585,7 @@ msgstr ""
 #: view:purchase.order:purchase.view_request_for_quotation_filter
 #: view:purchase.report:purchase.view_purchase_order_search
 msgid "Quotations"
-msgstr ""
+msgstr "Cotizacion"
 
 #. module: purchase
 #: selection:purchase.order,state:0
@@ -1663,7 +1663,7 @@ msgstr ""
 #: view:purchase.order:purchase.view_purchase_order_filter
 #: view:purchase.order:purchase.view_request_for_quotation_filter
 msgid "Reference"
-msgstr ""
+msgstr "Referencia"
 
 #. module: purchase
 #: field:purchase.report,product_uom:0
@@ -1724,7 +1724,7 @@ msgstr ""
 #: view:purchase.report:purchase.view_purchase_order_search
 #: field:purchase.report,user_id:0
 msgid "Responsible"
-msgstr ""
+msgstr "Responsable"
 
 #. module: purchase
 #: view:purchase.config.settings:purchase.view_purchase_configuration
@@ -1798,7 +1798,7 @@ msgstr ""
 #: field:purchase.order.line,state:0
 #: view:purchase.report:purchase.view_purchase_order_search
 msgid "Status"
-msgstr ""
+msgstr "Estado"
 
 #. module: purchase
 #: model:ir.model,name:purchase.model_stock_move
@@ -1813,7 +1813,7 @@ msgstr ""
 #. module: purchase
 #: field:purchase.order.line,price_subtotal:0
 msgid "Subtotal"
-msgstr ""
+msgstr "Subtotal"
 
 #. module: purchase
 #: field:purchase.order,message_summary:0
@@ -1859,7 +1859,7 @@ msgstr ""
 #: field:purchase.order,amount_tax:0 field:purchase.order.line,taxes_id:0
 #: view:website:purchase.report_purchaseorder_document
 msgid "Taxes"
-msgstr ""
+msgstr "Impuestos"
 
 #. module: purchase
 #: field:purchase.order,notes:0
@@ -1963,12 +1963,12 @@ msgstr ""
 #: field:purchase.order,amount_total:0
 #: view:website:purchase.report_purchaseorder_document
 msgid "Total"
-msgstr ""
+msgstr "Total"
 
 #. module: purchase
 #: field:purchase.report,price_total:0
 msgid "Total Price"
-msgstr ""
+msgstr "Precio Total"
 
 #. module: purchase
 #: view:purchase.order:purchase.purchase_order_tree
@@ -2008,7 +2008,7 @@ msgstr ""
 #: field:purchase.order.line,price_unit:0
 #: view:website:purchase.report_purchaseorder_document
 msgid "Unit Price"
-msgstr ""
+msgstr "Precio unitario"
 
 #. module: purchase
 #: field:purchase.report,quantity:0
@@ -2059,7 +2059,7 @@ msgstr ""
 #. module: purchase
 #: model:res.groups,name:purchase.group_purchase_user
 msgid "User"
-msgstr ""
+msgstr "Usuario"
 
 #. module: purchase
 #: view:website:purchase.report_purchaseorder_document
@@ -2096,7 +2096,7 @@ msgstr ""
 #: model:ir.model,name:purchase.model_stock_warehouse
 #: field:purchase.report,picking_type_id:0
 msgid "Warehouse"
-msgstr ""
+msgstr "Almacen"
 
 #. module: purchase
 #: code:addons/purchase/purchase.py:1114 code:addons/purchase/purchase.py:1130
@@ -2149,9 +2149,9 @@ msgstr ""
 #: view:purchase.order.group:purchase.view_purchase_order_group
 #: view:purchase.order.line_invoice:purchase.view_purchase_line_invoice
 msgid "or"
-msgstr ""
+msgstr "o"
 
 #. module: purchase
 #: field:purchase.order,related_usage:0
 msgid "unknown"
-msgstr ""
+msgstr "desconocido"
