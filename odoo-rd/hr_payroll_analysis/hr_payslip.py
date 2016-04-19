@@ -32,6 +32,7 @@ class hr_payslip(orm.Model):
         ),
     }
 
+    '''
     def process_sheet(self, cr, uid, ids, context=None):
         """
         Create the analysis lines when the payslip is confirmed
@@ -51,7 +52,7 @@ class hr_payslip(orm.Model):
         self.remove_analysis_lines(cr, uid, ids, context=context)
         self.compute_analysis_lines(cr, uid, ids, context=context)
 
-    '''
+
     def remove_analysis_lines(self, cr, uid, ids, context=None):
         """
         Make sure no analysis line has already been computed
